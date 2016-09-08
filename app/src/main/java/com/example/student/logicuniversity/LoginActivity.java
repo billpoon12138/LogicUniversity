@@ -3,7 +3,12 @@ package com.example.student.logicuniversity;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -61,11 +66,21 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+    private SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        sp = this.getSharedPreferences("userInfo", Context.MODE_WORLD_READABLE);
+//        //If in login status, keep the username and password
+//        if(sp.getBoolean("ISLOAD",false)) {
+//            Intent intent = new Intent(this, MenuActivity.class);
+//            intent.putExtra("USER",sp.getString("USER_NAME", ""));
+//            startActivity(intent);
+//            this.finish();//关闭登录界面
+//        }
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
@@ -81,6 +96,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 return false;
             }
         });
+
+        //If in login status, keep the username and password
+        if(sp.getBoolean("ISLOAD",false)) {
+            mEmailView.setText(sp.getString("USER_NAME",""));
+            mPasswordView.setText(sp.getString("PASSWORD",""));
+        }
 
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
@@ -333,12 +354,31 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             showProgress(false);
 
             if (success) {
+                //call uiHandler
+                Message msg = new Message();
+                uiHandler.sendMessage(msg);
                 finish();
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
                 mPasswordView.requestFocus();
             }
         }
+
+        private Handler uiHandler= new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                //save username, password into sharedpreferenes
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putString("USER_NAME", mEmail);
+                editor.putString("PASSWORD", mPassword);
+                editor.putBoolean("ISLOAD", true);
+                editor.commit();
+
+                //New Activity
+                Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
+                startActivity(intent);
+            }
+        };
 
         @Override
         protected void onCancelled() {
