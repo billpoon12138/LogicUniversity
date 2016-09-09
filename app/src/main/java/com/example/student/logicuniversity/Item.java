@@ -23,7 +23,7 @@ public class Item extends HashMap<String, String> {
         items.add(new Item("A10003", "3", "pen highlight", "12", "10"));
         items.add(new Item("A10004", "4", "pen blue", "13", "13"));
 
-        return(items);
+        return items;
     }
 
 

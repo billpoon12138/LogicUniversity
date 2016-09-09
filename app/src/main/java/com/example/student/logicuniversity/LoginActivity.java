@@ -76,7 +76,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         sp = this.getSharedPreferences("userInfo", Context.MODE_WORLD_READABLE);
 //        //If in login status, keep the username and password
 //        if(sp.getBoolean("ISLOAD",false)) {
-//            Intent intent = new Intent(this, MenuActivity.class);
+//            Intent intent = new Intent(this, MenuStoreActivity.class);
 //            intent.putExtra("USER",sp.getString("USER_NAME", ""));
 //            startActivity(intent);
 //            this.finish();//关闭登录界面
@@ -375,7 +375,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 editor.commit();
 
                 //New Activity
-                Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
+                Intent intent = new Intent(LoginActivity.this, MenuStoreActivity.class);
                 startActivity(intent);
             }
         };
