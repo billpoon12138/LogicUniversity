@@ -35,6 +35,7 @@ public class EmployeeAdapter extends ArrayAdapter<Item>
         if(item != null) {
             TextView name = (TextView) view.findViewById(R.id.text1);
             name.setText(item.get("name"));
+
             TextView id = (TextView) view.findViewById(R.id.text2);
             id.setText(item.get("id"));
 

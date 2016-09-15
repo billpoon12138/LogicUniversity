@@ -17,27 +17,28 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/app_name">
-
-            <!--
-            <intent-filter>
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            -->
+            </intent-filter> -->
         </activity>
         <activity android:name=".RetrievalActivity" />
-        <activity android:name=".CollectionDepartment" />
         <activity android:name=".MenuStoreActivity" />
         <activity android:name=".MenuDepartment">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".RejectionDepartment" />
         <activity android:name=".CollectionDepartmentMulti" />
-        <activity android:name=".EmployeeDepartment"></activity>
+        <activity android:name=".EmployeeDepartment" />
+        <activity android:name=".DistributeDepartment">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter> -->
+        </activity>
     </application>
 
 </manifest>

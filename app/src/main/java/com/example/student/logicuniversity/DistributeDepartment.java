@@ -1,6 +1,5 @@
 package com.example.student.logicuniversity;
 
-
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -8,12 +7,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.List;
 
-public class EmployeeDepartment extends AppCompatActivity implements AdapterView.OnItemClickListener
+public class DistributeDepartment extends AppCompatActivity implements AdapterView.OnItemClickListener
 {
 
     List<Item> items;
@@ -23,13 +23,13 @@ public class EmployeeDepartment extends AppCompatActivity implements AdapterView
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_employee_department);
+        setContentView(R.layout.activity_distribute_department);
 
         //set title
-        setTitle("EMPLOYEE");
+        setTitle("DISTRIBUTE");
 
         // Set up Java / XML ListView listener (using Listener interface method)
-        final ListView list = (ListView) findViewById(R.id.listView3);
+        final ListView list = (ListView) findViewById(R.id.listView4);
         list.setOnItemClickListener(this);
 
 
@@ -43,7 +43,7 @@ public class EmployeeDepartment extends AppCompatActivity implements AdapterView
             @Override
             protected void onPostExecute(List<Item> result)
             {
-                EmployeeAdapter adapter = new EmployeeAdapter(EmployeeDepartment.this, R.layout.row_employee_department, items);
+                DistributeAdapter adapter = new DistributeAdapter(DistributeDepartment.this, R.layout.row_distribute_department, items);
                 list.setAdapter(adapter);
             }
         }.execute();
@@ -53,16 +53,36 @@ public class EmployeeDepartment extends AppCompatActivity implements AdapterView
     @Override
     public void onItemClick(AdapterView<?> av, View v, int position, long id)
     {
-        //String item = (String) av.getAdapter().getItem(position);
+        String item = (String) av.getAdapter().getItem(position);
 
         System.out.println("ListView Select item - Clicked");
 
-        Intent intent = new Intent(getApplicationContext(), DistributeDepartment.class);
-        startActivity(intent);
-
-        //Toast.makeText(getApplicationContext(), item + " selected", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), item + " selected",
+                Toast.LENGTH_LONG).show();
     }
 
+    public void onCheckboxClicked(View view)
+    {
+        // Is the view now checked?
+        boolean checked = ((CheckBox) view).isChecked();
 
+        // Check which checkbox was clicked
+        switch(view.getId())
+        {
+            case R.id.checkBox1:
+                if (checked)
+                {
+                    System.out.println("ListView CheckBox item - Clicked");
+
+                }
+                else
+                {
+
+                }
+                break;
+
+        }
+    }
 
 }
+

@@ -42,7 +42,7 @@ public class Item extends HashMap<String, String>
                 String bin = json.getString("Bin");
                 int requested = json.getInt("Requested");
                 int actual = json.getInt("Actual");
-                
+
                 Item item = new Item(id, bin, name, Integer.toString(requested), Integer.toString(actual));
                 items.add(item);
             }
