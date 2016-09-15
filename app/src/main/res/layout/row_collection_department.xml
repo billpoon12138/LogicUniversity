@@ -12,6 +12,31 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_centerHorizontal="true"
+        android:paddingTop="20dp"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/checkBox2"
+        android:onClick="onCheckboxClicked"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/text1"
+        android:layout_toEndOf="@+id/text1"
+        android:layout_marginLeft="23dp"
+        />
+
+    <TextView
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Reject"
+        android:id="@+id/text6"
+        android:layout_marginTop="25dp"
+        android:layout_toRightOf="@+id/checkBox2"
+        android:layout_toEndOf="@+id/checkBox2"
+        android:layout_marginLeft="1dp"
         />
 
     <TextView
@@ -68,31 +93,15 @@
         android:text=""
         android:id="@+id/checkBox1"
         android:onClick="onCheckboxClicked"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"/>
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:id="@+id/checkBox2"
-        android:onClick="onCheckboxClicked"
-        android:layout_alignTop="@+id/text1"
-        android:layout_toRightOf="@+id/text1"
-        android:layout_toEndOf="@+id/text1"
-        android:layout_marginLeft="23dp"
+        android:layout_alignTop="@+id/text5"
+        android:layout_toRightOf="@+id/text5"
+        android:layout_toEndOf="@+id/text5"
+        android:layout_alignParentRight="true"
         />
+        <!--android:layout_alignParentBottom="true"
+         android:layout_marginLeft="23dp"
+        /> -->
 
-    <TextView
-        android:layout_width="60dp"
-        android:layout_height="20dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Reject"
-        android:id="@+id/text6"
-        android:layout_marginTop="10dp"
-        android:layout_toRightOf="@+id/checkBox2"
-        android:layout_toEndOf="@+id/checkBox2"
-        android:layout_marginLeft="1dp"
-        />
+
 
 </RelativeLayout>

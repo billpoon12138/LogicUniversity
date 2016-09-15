@@ -37,9 +37,9 @@ public class MenuDepartment extends ListActivity
             Intent intent = new Intent(this, CollectionDepartmentMulti.class);
             startActivity(intent);
         }
-        else if (position == 1) // OnClick second row of ListView, transit to next activity (Distribute screen)
+        else if (position == 1) // OnClick second row of ListView, transit to next activity (Distribute Employee screen)
         {
-            Intent intent = new Intent(this, CollectionDepartment.class); // Remember to change name to "Distribute"
+            Intent intent = new Intent(this, EmployeeDepartment.class);
             startActivity(intent);
         }
 

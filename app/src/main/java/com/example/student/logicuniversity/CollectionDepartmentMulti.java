@@ -69,6 +69,9 @@ public class CollectionDepartmentMulti extends AppCompatActivity implements Adap
     public void onItemClick(AdapterView<?> av, View v, int position, long id)
     {
         String item = (String) av.getAdapter().getItem(position);
+
+        System.out.println("ListView Select item - Clicked");
+
         Toast.makeText(getApplicationContext(), item + " selected",
                 Toast.LENGTH_LONG).show();
     }
@@ -84,7 +87,7 @@ public class CollectionDepartmentMulti extends AppCompatActivity implements Adap
             case R.id.checkBox1:
                 if (checked)
                 {
-                    System.out.println("ListView Select item - Clicked");
+                    System.out.println("ListView CheckBox item - Clicked");
 
                 }
                 else
@@ -96,7 +99,7 @@ public class CollectionDepartmentMulti extends AppCompatActivity implements Adap
             case R.id.checkBox2:
                 if (checked)
                 {
-                    System.out.println("ListView Reject item - Clicked");
+                    System.out.println("ListView Reject CheckBox item - Clicked");
                     Intent intent = new Intent(getApplicationContext(), RejectionDepartment.class);
                     startActivity(intent);
                 }
