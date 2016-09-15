@@ -12,14 +12,13 @@ import android.widget.TextView;
 import java.util.List;
 
 /**
- * Created by student on 8/9/16.
+ * Created by Johnson Dell laptop on 14-Sep-16.
  */
-public class ItemAdapter extends ArrayAdapter<Item>
+public class CollectionAdapter extends ArrayAdapter<Item>
 {
-
     private List<Item> items;
 
-    public ItemAdapter(Context context, int resource, List<Item> items) {
+    public CollectionAdapter(Context context, int resource, List<Item> items) {
         super(context, resource, items);
         this.items = items;
     }
@@ -28,16 +27,20 @@ public class ItemAdapter extends ArrayAdapter<Item>
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) getContext()
                 .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.row3, null);
+        View view = inflater.inflate(R.layout.row_collection_department, null);
         Item item = items.get(position);
 
         if(item != null) {
             TextView name = (TextView) view.findViewById(R.id.text1);
             name.setText(item.get("name"));
-            TextView id = (TextView) view.findViewById(R.id.text2);
-            id.setText(item.get("id"));
+            TextView requested = (TextView) view.findViewById(R.id.text3);
+            requested.setText(item.get("requested"));
+            TextView actual = (TextView) view.findViewById(R.id.text5);
+            actual.setText(item.get("actual"));
+
             CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkBox1);
         }
         return view;
     }
+
 }

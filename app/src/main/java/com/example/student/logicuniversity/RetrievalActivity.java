@@ -18,7 +18,8 @@ public class RetrievalActivity extends AppCompatActivity implements AdapterView.
     List<Item> items;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_retrieval);
         //set title
@@ -29,14 +30,19 @@ public class RetrievalActivity extends AppCompatActivity implements AdapterView.
 //                        new String[]{"name", "id"},
 //                        new int[]{R.id.text1, R.id.text2});
         final ListView list = (ListView) findViewById(R.id.listView);
+
         list.setOnItemClickListener(this);
-        new AsyncTask<Void, Void, List<Item>>() {
+
+        new AsyncTask<Void, Void, List<Item>>()
+        {
             @Override
-            protected List<Item> doInBackground(Void... params) {
+            protected List<Item> doInBackground(Void... params)
+            {
                 return items = Item.getRequisition();
             }
             @Override
-            protected void onPostExecute(List<Item> result) {
+            protected void onPostExecute(List<Item> result)
+            {
                 ItemAdapter adapter = new ItemAdapter(RetrievalActivity.this, R.layout.row3, items);
                 list.setAdapter(adapter);
             }
@@ -45,7 +51,8 @@ public class RetrievalActivity extends AppCompatActivity implements AdapterView.
     }
 
     @Override
-    public void onItemClick(AdapterView<?> av, View v, int position, long id) {
+    public void onItemClick(AdapterView<?> av, View v, int position, long id)
+    {
         String item = (String) av.getAdapter().getItem(position);
         Toast.makeText(getApplicationContext(), item + " selected",
                 Toast.LENGTH_LONG).show();

@@ -12,12 +12,14 @@ import java.util.List;
 /**
  * Created by billpoon on 7/9/16.
  */
-public class Item extends HashMap<String, String> {
+public class Item extends HashMap<String, String>
+{
 
     // Url
     final static String host = "http://10.10.2.81/WCFService_LU/Service.svc/";
 
-    public Item(String id, String bin, String name, String requested, String actual) {
+    public Item(String id, String bin, String name, String requested, String actual)
+    {
         put("id", id);
         put("bin", bin);
         put("name", name);
@@ -25,13 +27,15 @@ public class Item extends HashMap<String, String> {
         put("actual", actual);
     }
 
-    public static List<Item> getRequisition() {
+    public static List<Item> getRequisition()
+    {
         List<Item> items = new ArrayList<Item>();
 
         try{
             JSONArray jsons = JSONParser.getJSONArrayFromUrl(host + "Items");
             int nnn = jsons.length();
-            for(int i = 0; i < jsons.length(); i ++){
+            for(int i = 0; i < jsons.length(); i ++)
+            {
                 JSONObject json = jsons.getJSONObject(i);
                 String id = json.getString("Id");
                 String name = json.getString("Name");
@@ -52,9 +56,5 @@ public class Item extends HashMap<String, String> {
 
         return items;
     }
-
-
-
-
 
 }

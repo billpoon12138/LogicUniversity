@@ -24,7 +24,8 @@ public class CollectionDepartment extends ListActivity {
     };
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_collection_department);
 
@@ -58,5 +59,6 @@ public class CollectionDepartment extends ListActivity {
         CheckedTextView item = (CheckedTextView) v; Toast.makeText(this, stationary[position] + " checked : " + item.isChecked(), Toast.LENGTH_SHORT).show();
         System.out.println("ListView item - Clicked");
     }
+
 
 }
