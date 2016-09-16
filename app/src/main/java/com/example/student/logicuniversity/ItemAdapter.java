@@ -33,9 +33,11 @@ public class ItemAdapter extends ArrayAdapter<Item>
 
         if(item != null) {
             TextView name = (TextView) view.findViewById(R.id.text1);
-            name.setText(item.get("name"));
+//            name.setText(item.get("name"));
+            name.setText(item.get("row1"));
             TextView id = (TextView) view.findViewById(R.id.text2);
-            id.setText(item.get("id"));
+//            id.setText(item.get("id"));
+            id.setText(item.get("row2"));
             CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkBox1);
         }
         return view;
