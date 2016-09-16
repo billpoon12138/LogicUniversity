@@ -14,7 +14,7 @@ public class Employee extends HashMap<String, String>
 {
 
     // Url
-    final static String host = "http://10.10.2.81/WCFService_LU/Service.svc/";
+    final static String host = "http://10.10.2.81/WebSite/LogicUniversityMobile/Service.svc/";
 
     public Employee(String id, String bin, String name, String requested, String actual)
     {
