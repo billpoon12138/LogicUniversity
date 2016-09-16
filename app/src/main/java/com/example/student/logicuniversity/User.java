@@ -20,7 +20,7 @@ public class User {
     }
 
     // Url for Login
-    final static String host = "http://10.10.2.81/WCFService_LU/Service.svc/";
+    final static String host = "http://10.10.2.81/WebSite/LogicUniversityMobile/Service.svc/";
 
     public User(String email, String role) {
         Email = email;
@@ -38,7 +38,7 @@ public class User {
             userJO.put("Email", user.Email);
             userJO.put("Password", user.Password);
             String json = userJO.toString();
-            JSONObject result = JSONParser.postJSONFromUrl(host + "Login", json);
+            JSONObject result = JSONParser.postJSONFromUrl(host + "LoginWithEmail", json);
 //            result = result.substring(1, result.length() - 1);
             User userResult = new User(result.getString("Email"), result.getString("Role"));
             return userResult;

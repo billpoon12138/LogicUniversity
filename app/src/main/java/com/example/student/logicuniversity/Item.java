@@ -16,7 +16,7 @@ public class Item extends HashMap<String, String>
 {
 
     // Url
-    final static String host = "http://10.10.2.81/WCFService_LU/Service.svc/";
+    final static String host = "http://10.10.2.81/WebSite/LogicUniversityMobile/Service.svc/";
 
 
     public Item(String id, String bin, String name, String requested, String actual, String row1, String row2) {

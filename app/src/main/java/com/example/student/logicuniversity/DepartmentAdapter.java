@@ -33,8 +33,8 @@ public class DepartmentAdapter extends ArrayAdapter<Department> {
         if(department != null) {
             TextView name = (TextView) view.findViewById(R.id.text1);
             name.setText(department.get("name"));
-            TextView id = (TextView) view.findViewById(R.id.text2);
-            id.setText(department.get("id"));
+//            TextView id = (TextView) view.findViewById(R.id.text2);
+//            id.setText(department.get("id"));
             TextView status = (TextView) view.findViewById(R.id.text3);
             status.setText("Checked");
         }

@@ -14,7 +14,7 @@ public class Employee extends HashMap<String, String>
 {
 
     // Url
-    final static String host = "http://10.10.2.81/WCFService_LU/Service.svc/";
+    final static String host = "http://10.10.2.81/WebSite/LogicUniversityMobile/Service.svc/";
 
     public Employee(String id, String bin, String name, String requested, String actual)
     {
@@ -23,6 +23,12 @@ public class Employee extends HashMap<String, String>
         put("name", name);
         put("requested", requested);
         put("actual", actual);
+    }
+
+    public Employee(String id, String name)
+    {
+        put("id", id);
+        put("name", name);
     }
 
     public static List<Item> getRequisition()
@@ -47,10 +53,26 @@ public class Employee extends HashMap<String, String>
             Log.e("Exception", StackTrace.trace(e));
         }
 
-//        items.add(new Item("A10001", "1", "pencil 2B", "11", "11"));
-//        items.add(new Item("A10002", "2", "pen", "20", "19"));
-//        items.add(new Item("A10003", "3", "pen highlight", "12", "10"));
-//        items.add(new Item("A10004", "4", "pen blue", "13", "13"));
+        return items;
+    }
+
+    public static List<Employee> getEmployee(String departmentId)
+    {
+        List<Employee> items = new ArrayList<Employee>();
+
+        try{
+            JSONArray jsons = JSONParser.getJSONArrayFromUrl(host + "Employee/" + departmentId);
+            for(int i = 0; i < jsons.length(); i ++)
+            {
+                JSONObject json = jsons.getJSONObject(i);
+                String id = json.getString("Id");
+                String name = json.getString("Name");
+                Employee item = new Employee(id, name);
+                items.add(item);
+            }
+        } catch (Exception e) {
+            Log.e("Exception", StackTrace.trace(e));
+        }
 
         return items;
     }
