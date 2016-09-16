@@ -35,7 +35,7 @@ public class MenuStoreActivity extends ListActivity {
         }
         else if (position == 1) // OnClick second row of ListView, transit to next activity (Distribute screen)
         {
-            Intent intent = new Intent(this, CollectionDepartment.class); // Remember to change name to "Distribute"
+            Intent intent = new Intent(this, DisbursementActivity.class); // Remember to change name to "Distribute"
             startActivity(intent);
         }
 

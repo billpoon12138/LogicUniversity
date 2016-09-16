@@ -12,32 +12,31 @@ import android.widget.TextView;
 import java.util.List;
 
 /**
- * Created by student on 8/9/16.
+ * Created by student on 13/9/16.
  */
-public class ItemAdapter extends ArrayAdapter<Item> {
+public class DepartmentAdapter extends ArrayAdapter<Department> {
 
-    private List<Item> items;
+    private List<Department> departments;
 
-    public ItemAdapter(Context context, int resource, List<Item> items) {
-        super(context, resource, items);
-        this.items = items;
+    public DepartmentAdapter(Context context, int resource, List<Department> departments) {
+        super(context, resource, departments);
+        this.departments = departments;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) getContext()
                 .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.row3, null);
-        Item item = items.get(position);
+        View view = inflater.inflate(R.layout.row4, null);
+        Department department = departments.get(position);
 
-        if(item != null) {
+        if(department != null) {
             TextView name = (TextView) view.findViewById(R.id.text1);
-//            name.setText(item.get("name"));
-            name.setText(item.get("row1"));
+            name.setText(department.get("name"));
             TextView id = (TextView) view.findViewById(R.id.text2);
-//            id.setText(item.get("id"));
-            id.setText(item.get("row2"));
-            CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkBox1);
+            id.setText(department.get("id"));
+            TextView status = (TextView) view.findViewById(R.id.text3);
+            status.setText("Checked");
         }
         return view;
     }
