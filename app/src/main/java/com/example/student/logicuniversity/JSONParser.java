@@ -18,25 +18,30 @@ import java.net.URL;
 /**
  * Created by student on 28/7/16.
  */
-public class JSONParser {
-    static String readStream(InputStream is) {
+public class JSONParser
+{
+    static String readStream(InputStream is)
+    {
         StringBuilder sb = new StringBuilder();
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(
                     is, "iso-8859-1"), 8);
             String line = null;
-            while ((line = reader.readLine()) != null) {
+            while ((line = reader.readLine()) != null)
+            {
                 sb.append(line);
                 sb.append('\n');
             }
             is.close();
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             Log.e("readStream Exception", StackTrace.trace(e));
         }
         return(sb.toString());
     }
 
-    public static String getStream(String url) {
+    public static String getStream(String url)
+    {
         InputStream is = null;
         try {
             URL u = new URL(url);
@@ -44,15 +49,18 @@ public class JSONParser {
             conn.setRequestMethod("GET");
             conn.connect();
             is = conn.getInputStream();
-        } catch (UnsupportedEncodingException e) {
+        } catch (UnsupportedEncodingException e)
+        {
             Log.e("getStream Exception", StackTrace.trace(e));
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             Log.e("getStream Exception", StackTrace.trace(e));
         }
         return readStream(is);
     }
 
-    public static String postStream(String url, String data) {
+    public static String postStream(String url, String data)
+    {
         InputStream is = null;
         try {
             URL u = new URL(url);
@@ -68,15 +76,18 @@ public class JSONParser {
             os.write(data.getBytes());
             os.flush();
             is = conn.getInputStream();
-        } catch (UnsupportedEncodingException e) {
+        } catch (UnsupportedEncodingException e)
+        {
             Log.e("postStream Exception", StackTrace.trace(e));
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             Log.e("postStream Exception", StackTrace.trace(e));
         }
         return readStream(is);
     }
 
-    public static String loginPostStream(String url, String data) {
+    public static String loginPostStream(String url, String data)
+    {
         InputStream is = null;
         try {
             URL u = new URL(url);
@@ -92,15 +103,18 @@ public class JSONParser {
             os.write(data.getBytes());
             os.flush();
             is = conn.getInputStream();
-        } catch (UnsupportedEncodingException e) {
+        } catch (UnsupportedEncodingException e)
+        {
             Log.e("postStream Exception", StackTrace.trace(e));
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             Log.e("postStream Exception", StackTrace.trace(e));
         }
         return LoginReadStream(is);
     }
 
-    static String LoginReadStream(InputStream is) {
+    static String LoginReadStream(InputStream is)
+    {
         StringBuilder sb = new StringBuilder();
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(
@@ -111,13 +125,15 @@ public class JSONParser {
 //                sb.append('\n');
             }
             is.close();
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             Log.e("readStream Exception", StackTrace.trace(e));
         }
         return(sb.toString());
     }
 
-    public static JSONObject getJSONFromUrl(String url) {
+    public static JSONObject getJSONFromUrl(String url)
+    {
         JSONObject jObj = null;
         try {
             jObj = new JSONObject(getStream(url));
@@ -127,21 +143,25 @@ public class JSONParser {
         return jObj;
     }
 
-    public static JSONArray getJSONArrayFromUrl(String url) {
+    public static JSONArray getJSONArrayFromUrl(String url)
+    {
         JSONArray jArray = null;
         try {
             jArray = new JSONArray(getStream(url));
-        } catch (JSONException e) {
+        } catch (JSONException e)
+        {
             Log.e("Exception", StackTrace.trace(e));
         }
         return jArray;
     }
 
-    public static JSONObject postJSONFromUrl(String url, String data){
+    public static JSONObject postJSONFromUrl(String url, String data)
+    {
         JSONObject jObj = null;
         try {
             jObj = new JSONObject(postStream(url, data));
-        } catch (JSONException e) {
+        } catch (JSONException e)
+        {
             Log.e("Exception", StackTrace.trace(e));
         }
         return jObj;
