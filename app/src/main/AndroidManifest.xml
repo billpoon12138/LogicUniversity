@@ -14,53 +14,37 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".LoginActivity"
-            android:label="@string/app_name">
-<<<<<<< HEAD
-            <!-- <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter> -->
-        </activity>
-        <activity android:name=".RetrievalActivity" />
-        <activity android:name=".MenuStoreActivity" />
-        <activity android:name=".MenuDepartment">
-=======
->>>>>>> 7842c05937d24428fb5b9a09d5e2f7ea8044da9a
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".RetrievalActivity" />
-        <activity android:name=".MenuStoreActivity" />
-        <activity android:name=".MenuDepartment" />
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
-        <!--</activity>-->
-        <!-- <activity android:name=".MenuDepartment"> -->
-        <!-- <intent-filter> -->
-        <!-- <action android:name="android.intent.action.MAIN" /> -->
 
-
-        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-        <!-- </intent-filter> -->
-        <!-- </activity> -->
-        <activity android:name=".RejectionDepartment" />
-        <activity android:name=".DisbursementActivity" />
-        <activity android:name=".StoreMenuActivity" />
-        <activity android:name=".DepartmentRequisitionActivity"></activity>
-        <activity android:name=".CollectionDepartmentMulti" />
-        <activity android:name=".EmployeeDepartment" />
-        <activity android:name=".DistributeDepartment">
+        <activity android:name=".LoginActivity" android:label="@string/app_name">
             <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter> -->
         </activity>
+
+        <activity android:name=".MenuDepartment">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MenuStoreActivity">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter> -->
+        </activity>
+
+        <activity android:name=".RetrievalActivity" />
+        <activity android:name=".RejectionDepartment" />
+        <activity android:name=".DisbursementActivity" />
+        <activity android:name=".StoreMenuActivity" />
+        <activity android:name=".DepartmentRequisitionActivity" />
+        <activity android:name=".CollectionDepartmentMulti" />
+        <activity android:name=".EmployeeDepartment" />
+        <activity android:name=".DistributeDepartment" />
+
     </application>
 
 </manifest>
