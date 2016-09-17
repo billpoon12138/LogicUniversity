@@ -14,6 +14,7 @@ public class User {
     String Email;
     String Password;
     String Role;
+    String Dept;
 
     public void setPassword(String password) {
         Password = password;
@@ -22,9 +23,10 @@ public class User {
     // Url for Login
     final static String host = "http://10.10.2.81/WebSite/LogicUniversity/Service.svc/";
 
-    public User(String email, String role) {
+    public User(String email, String role, String dept) {
         Email = email;
         Role = role;
+        Dept = dept;
     }
 
     public User(String email) {
@@ -40,7 +42,7 @@ public class User {
             String json = userJO.toString();
             JSONObject result = JSONParser.postJSONFromUrl(host + "LoginWithEmail", json);
 //            result = result.substring(1, result.length() - 1);
-            User userResult = new User(result.getString("Email"), result.getString("Role"));
+            User userResult = new User(result.getString("Email"), result.getString("Role"), result.getString("Dept"));
             return userResult;
         } catch (Exception e) {
             Log.e("Login error", e.toString());

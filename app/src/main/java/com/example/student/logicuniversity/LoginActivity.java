@@ -61,6 +61,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      */
     private UserLoginTask mAuthTask = null;
 
+    private String dept = "";
+
     // UI references.
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
@@ -347,7 +349,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             u.setPassword(mPassword);
 
             User user = User.Login(u);
-            if (user.Role.equals("staff")){
+            if (user != null){
+                dept = user.Dept;
                 return true;
             }
 
@@ -382,8 +385,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 editor.commit();
 
                 //New Activity
-                Intent intent = new Intent(LoginActivity.this, MenuStoreActivity.class);
-                startActivity(intent);
+                if(dept.equals("INV")){
+                    Intent intent = new Intent(LoginActivity.this, MenuStoreActivity.class);
+                    startActivity(intent);
+                }else{
+                    Intent intent = new Intent(LoginActivity.this, MenuDepartment.class);
+                    startActivity(intent);
+                }
             }
         };
 
