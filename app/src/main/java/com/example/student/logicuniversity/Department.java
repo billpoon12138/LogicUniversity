@@ -15,7 +15,7 @@ import java.util.List;
 public class Department extends HashMap<String, String> {
 
     // Url
-    final static String host = "http://10.10.2.81/WebSite/LogicUniversityMobile/Service.svc/";
+    final static String host = "http://10.10.2.81/WebSite/LogicUniversity/Service.svc/";
 
     public Department(String id, String code, String name, String contact, String phone, String fax, String email, String collectionPointId) {
         put("id", id);
