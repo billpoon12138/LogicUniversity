@@ -349,7 +349,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             u.setPassword(mPassword);
 
             User user = User.Login(u);
-            if (user != null){
+            if (user != null && (!user.UserId.equals("null"))){
                 dept = user.Dept;
                 return true;
             }
