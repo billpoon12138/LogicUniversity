@@ -52,11 +52,6 @@ public class Department extends HashMap<String, String> {
             Log.e("Exception", StackTrace.trace(e));
         }
 
-//        items.add(new Item("A10001", "1", "pencil 2B", "11", "11"));
-//        items.add(new Item("A10002", "2", "pen", "20", "19"));
-//        items.add(new Item("A10003", "3", "pen highlight", "12", "10"));
-//        items.add(new Item("A10004", "4", "pen blue", "13", "13"));
-
         return departments;
     }
 

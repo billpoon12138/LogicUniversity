@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.util.List;
@@ -15,14 +14,14 @@ import java.util.List;
 /**
  * Created by student on 8/9/16.
  */
-public class EmployeeAdapter extends ArrayAdapter<Item>
+public class EmployeeAdapter extends ArrayAdapter<Employee>
 {
 
-    private List<Item> items;
+    private List<Employee> employees;
 
-    public EmployeeAdapter(Context context, int resource, List<Item> items) {
-        super(context, resource, items);
-        this.items = items;
+    public EmployeeAdapter(Context context, int resource, List<Employee> employees) {
+        super(context, resource, employees);
+        this.employees = employees;
     }
 
     @Override
@@ -30,7 +29,7 @@ public class EmployeeAdapter extends ArrayAdapter<Item>
         LayoutInflater inflater = (LayoutInflater) getContext()
                 .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.row_employee_department, null);
-        Item item = items.get(position);
+        Employee item = employees.get(position);
 
         if(item != null) {
             TextView name = (TextView) view.findViewById(R.id.text1);

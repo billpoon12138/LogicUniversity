@@ -16,7 +16,7 @@ import java.util.List;
 public class EmployeeDepartment extends AppCompatActivity implements AdapterView.OnItemClickListener
 {
 
-    List<Item> items;
+    List<Employee> employees;
 
 
     @Override
@@ -33,17 +33,17 @@ public class EmployeeDepartment extends AppCompatActivity implements AdapterView
         list.setOnItemClickListener(this);
 
 
-        new AsyncTask<Void, Void, List<Item>>()
+        new AsyncTask<Void, Void, List<Employee>>()
         {
             @Override
-            protected List<Item> doInBackground(Void... params)
+            protected List<Employee> doInBackground(Void... params)
             {
-                return items = Item.getRequisition();
+                return employees = Employee.getEmployee("1");
             }
             @Override
-            protected void onPostExecute(List<Item> result)
+            protected void onPostExecute(List<Employee> result)
             {
-                EmployeeAdapter adapter = new EmployeeAdapter(EmployeeDepartment.this, R.layout.row_employee_department, items);
+                EmployeeAdapter adapter = new EmployeeAdapter(EmployeeDepartment.this, R.layout.row_employee_department, employees);
                 list.setAdapter(adapter);
             }
         }.execute();

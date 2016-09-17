@@ -61,13 +61,35 @@ public class Item extends HashMap<String, String>
         } catch (Exception e) {
             Log.e("Exception", StackTrace.trace(e));
         }
-
-//        items.add(new Item("A10001", "1", "pencil 2B", "11", "11"));
-//        items.add(new Item("A10002", "2", "pen", "20", "19"));
-//        items.add(new Item("A10003", "3", "pen highlight", "12", "10"));
-//        items.add(new Item("A10004", "4", "pen blue", "13", "13"));
-
         return items;
     }
+
+    public static List<Item> getRequisitionByDepartmentId(String departmentId){
+
+        List<Item> items = new ArrayList<Item>();
+
+        try{
+            JSONArray jsons = JSONParser.getJSONArrayFromUrl(host + "Items");
+            int nnn = jsons.length();
+            for(int i = 0; i < jsons.length(); i ++)
+            {
+                JSONObject json = jsons.getJSONObject(i);
+                String id = json.getString("Id");
+                String name = json.getString("Name");
+                String bin = json.getString("Bin");
+                int requested = json.getInt("Requested");
+                int actual = json.getInt("Actual");
+
+                String row1 = "Bin#" + bin + " " + name;
+                String row2 = "Requested: " + Integer.toString(requested) + " " + "Actual: " + Integer.toString(actual);
+                Item item = new Item(id, bin, name, Integer.toString(requested), Integer.toString(actual), row1, row2);
+                items.add(item);
+            }
+        } catch (Exception e) {
+            Log.e("Exception", StackTrace.trace(e));
+        }
+        return items;
+    }
+
 
 }
