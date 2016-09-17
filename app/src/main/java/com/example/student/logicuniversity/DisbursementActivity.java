@@ -20,7 +20,7 @@ public class DisbursementActivity extends AppCompatActivity implements AdapterVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_disbursement);
         //set title
-        setTitle("Disbursement");
+        setTitle("DISBURSEMENT");
         final ListView list = (ListView) findViewById(R.id.listView);
         list.setOnItemClickListener(this);
         new AsyncTask<Void, Void, List<Department>>() {

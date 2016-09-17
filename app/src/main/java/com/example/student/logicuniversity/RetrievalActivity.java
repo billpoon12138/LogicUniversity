@@ -23,7 +23,7 @@ public class RetrievalActivity extends AppCompatActivity implements AdapterView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_retrieval);
         //set title
-        setTitle("Retrieval");
+        setTitle("RETRIEVAL");
 //        items = Item.getRequisition();
 //        SimpleAdapter adapter = new SimpleAdapter
 //                (this, items, R.layout.row2,
