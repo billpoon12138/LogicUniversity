@@ -6,6 +6,20 @@
 
     tools:context="com.example.student.logicuniversity.MenuDepartment">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="MENU"
+        android:id="@+id/textView"
+        android:textSize="21sp"
+        android:background="#3F51B5"
+        android:textColor="#FFFFFF"
+        android:padding="13dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        />
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -19,20 +33,10 @@
         <ListView android:id="@android:id/list"
             android:layout_width="match_parent"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_height="200dp">
+            android:textSize="50dp"
+            android:layout_height="300dp">
         </ListView>
 
     </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Menu"
-        android:id="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-
 
 </RelativeLayout>
