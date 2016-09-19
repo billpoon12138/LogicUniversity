@@ -55,7 +55,7 @@ public class MenuStoreActivity extends ListActivity
         });
 
     }
-
+    // Listener for the list table menu
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id)
     {
@@ -103,7 +103,7 @@ public class MenuStoreActivity extends ListActivity
         }*/
 
     }
-
+    // Listener actions for the QR code button
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {

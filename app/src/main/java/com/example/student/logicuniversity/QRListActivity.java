@@ -19,8 +19,8 @@ import android.widget.Toast;
 public class QRListActivity extends AppCompatActivity
 {
 
-    final static int []view = {R.id.editText1, R.id.editText2, R.id.editText3, R.id.editText4,R.id.editText5, R.id.editText6, R.id.editText7, R.id.editText8,R.id.editText9};
-    final static String []key = {"Partid", "Description", "Location", "Vendor","Vendorid", "Documentid", "Targetlevel", "Reorderlevel","Balance"};
+    final static int []view = {R.id.editText1, R.id.editText2, R.id.editText3, R.id.editText4,R.id.editText5, R.id.editText6};
+    final static String []key = {"Code", "Name", "Uom", "Bin","ReOrderLevel", "Balance"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -32,21 +32,21 @@ public class QRListActivity extends AppCompatActivity
         Bundle extras = getIntent().getExtras();
         String value1 = extras.getString("key1");
 
-        // Use variable value1 (QR code value) and use getSpares method to pull data into activity table view
-        new AsyncTask<String, Void, QRSpares>()
+        // Use variable value1 (QR code value) and use getItemByID method to pull data into activity table view
+        new AsyncTask<String, Void, Item>()
         {
             @Override
-            protected QRSpares doInBackground (String...params)
+            protected Item doInBackground (String...params)
             {
-                return QRSpares.getSpares(params[0]);
+                return Item.getItemById(params[0]);
             }
 
-            // Returned Spares object (spa) value from getSpares method as input parameter (result)
+            // Returned Item object (item) value from getItemByID method as input parameter (result) for onPostExecute method
             // Based on key values (column name), pull out the associated data values and put them into EditText view
             @Override
-            protected void onPostExecute (QRSpares result)
+            protected void onPostExecute (Item result)
             {
-                // If the returned object from getSpares method is null; i.e cannot find part id on web server
+                // If the returned object from getItemByID method is null; i.e cannot find Itemcode on web server
                 if (result == null)
                 {
                     // Do not want to use a standard toast; cannot set color and position

@@ -2,26 +2,18 @@ package com.example.student.logicuniversity;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.lang.String;
-import java.util.ArrayList;
-import java.util.List;
 
-/**
- * Created by Johnson Dell laptop on 16-Sep-16.
- */
-public class QRSpares extends java.util.HashMap<String,String> {
-
-
+public class QRSpares extends java.util.HashMap<String,String>
+{
     //Note that the web server IP address, http://172.23.135.219 changes when you move your WiFi laptop around; assume that your laptop is holding
     // Visual Studio program (acting as Web Server and holding Visual Studio files like Service.cs + IService.cs for WCF JSON)
     // If using desktop PC (LAN), then IP address will be fixed.
     // Always check your laptop IP address using command prompt (CMD: ipconfig)
-    final static String host = "http://172.23.135.219/MyInventoryWCF/Service.svc/";
+
+    final static String host = "http://10.10.2.81/WebSite/LogicUniversity/Service.svc/";
 
     // Default constructor
     public QRSpares()
@@ -42,7 +34,8 @@ public class QRSpares extends java.util.HashMap<String,String> {
     }
 
     // Create listSpares method
-    public static List<String> listSpares() {
+    public static List<String> listSpares()
+    {
         List<String> list = new ArrayList<String>();
         try {
             JSONArray a = JSONParser.getJSONArrayFromUrl(host+"Spares");
