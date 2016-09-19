@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:tools="http://schemas.android.com/tools"
 android:orientation="vertical"
 android:layout_width="match_parent"
@@ -12,8 +12,9 @@ tools:context="com.example.student.logicuniversity.QRListActivity">
 
 <TableLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:stretchColumns="1">
+    android:layout_height="wrap_content"
+    android:stretchColumns="1"
+    android:id="@+id/tableLayout">
 
     <TableRow
         android:layout_width="match_parent"
@@ -126,17 +127,16 @@ tools:context="com.example.student.logicuniversity.QRListActivity">
 
     </TableRow>
 
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="MENU"
-            android:id="@+id/button2" />
-    </TableRow>
-
 </TableLayout>
-</LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="MENU"
+        android:textSize="15sp"
+        android:id="@+id/buttonMenu"
+        android:layout_below="@+id/tableLayout"
+        android:layout_marginTop="75dp"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

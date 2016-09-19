@@ -38,7 +38,7 @@ public class QRListActivity extends AppCompatActivity
             @Override
             protected Item doInBackground (String...params)
             {
-                return Item.getItemById(params[0]);
+                return Item.getItemByCode(params[0]);
             }
 
             // Returned Item object (item) value from getItemByID method as input parameter (result) for onPostExecute method
@@ -51,7 +51,7 @@ public class QRListActivity extends AppCompatActivity
                 {
                     // Do not want to use a standard toast; cannot set color and position
                     //Toast.makeText(getApplicationContext(), "THIS PART DOES NOT EXISTS !",Toast.LENGTH_SHORT).show();
-
+                    Log.i("event", "Search failed,  unable to find item code");
                     Toast toast = Toast.makeText(getApplicationContext(), "THIS PART DOES NOT EXISTS ! ", Toast.LENGTH_LONG);
                     TextView v = (TextView) toast.getView().findViewById(android.R.id.message);
                     v.setTextColor(Color.RED);
@@ -68,10 +68,10 @@ public class QRListActivity extends AppCompatActivity
                 }
 
                 // Extract the value from the EditText view and convert to an integer, assign to bal (balance)
-                EditText balance = (EditText) findViewById(view[6]);
+                EditText balance = (EditText) findViewById(view[5]);
                 int bal = Integer.valueOf(balance.getText().toString());
                 // Extract the value from the EditText view and convert to an integer, assign to reord (reorderlevel)
-                EditText reorder = (EditText) findViewById(view[5]);
+                EditText reorder = (EditText) findViewById(view[4]);
                 int reord = Integer.valueOf(reorder.getText().toString());
 
                 // Compare balance and reorderlevel, if less, create a toast to ask for top up.
@@ -90,6 +90,19 @@ public class QRListActivity extends AppCompatActivity
                 }
             }
         }.execute(value1);
+
+        // Menu button definition and listener assignment
+        Button clickButton = (Button) findViewById(R.id.buttonMenu);
+        clickButton.setOnClickListener( new View.OnClickListener()
+        {
+
+            @Override
+            public void onClick(View v)
+            {
+                finish();
+
+            }
+        });
 
 
     }
