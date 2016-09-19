@@ -58,7 +58,7 @@ public class Employee extends HashMap<String, String>
 
     public static List<Employee> getEmployee(String departmentId)
     {
-        List<Employee> items = new ArrayList<Employee>();
+        List<Employee> employees = new ArrayList<Employee>();
 
         try{
             JSONArray jsons = JSONParser.getJSONArrayFromUrl(host + "Employee/" + departmentId);
@@ -67,14 +67,14 @@ public class Employee extends HashMap<String, String>
                 JSONObject json = jsons.getJSONObject(i);
                 String id = json.getString("Id");
                 String name = json.getString("Name");
-                Employee item = new Employee(id, name);
-                items.add(item);
+                Employee employee = new Employee(id, name);
+                employees.add(employee);
             }
         } catch (Exception e) {
             Log.e("Exception", StackTrace.trace(e));
         }
 
-        return items;
+        return employees;
     }
 
 }
