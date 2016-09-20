@@ -1,6 +1,5 @@
 package com.example.student.logicuniversity;
 
-
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,17 +8,13 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.TextView;
-
 import java.util.List;
 
-/**
- * Created by Johnson Dell laptop on 14-Sep-16.
- */
-public class DistributeAdapter extends ArrayAdapter<Item>
+public class Disbursement2Adapter extends ArrayAdapter<Item>
 {
     private List<Item> items;
 
-    public DistributeAdapter(Context context, int resource, List<Item> items)
+    public Disbursement2Adapter(Context context, int resource, List<Item> items)
     {
         super(context, resource, items);
         this.items = items;
@@ -28,10 +23,9 @@ public class DistributeAdapter extends ArrayAdapter<Item>
     @Override
     public View getView(int position, View convertView, ViewGroup parent)
     {
-        LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-
-        View view = inflater.inflate(R.layout.row_distribute_department, null);
-
+        LayoutInflater inflater = (LayoutInflater) getContext()
+                .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+        View view = inflater.inflate(R.layout.row_disbursement_store, null);
         Item item = items.get(position);
 
         if(item != null)

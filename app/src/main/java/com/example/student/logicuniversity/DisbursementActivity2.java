@@ -1,38 +1,36 @@
 package com.example.student.logicuniversity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 import android.widget.Toast;
-
-import java.util.ArrayList;
 import java.util.List;
 
-public class RetrievalActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+
+public class DisbursementActivity2 extends AppCompatActivity implements AdapterView.OnItemClickListener
+{
 
     List<Item> items;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_retrieval);
-        //set title
-        setTitle("RETRIEVAL");
-//        items = Item.getRequisition();
-//        SimpleAdapter adapter = new SimpleAdapter
-//                (this, items, R.layout.row2,
-//                        new String[]{"name", "id"},
-//                        new int[]{R.id.text1, R.id.text2});
-        final ListView list = (ListView) findViewById(R.id.listView);
+        setContentView(R.layout.activity_disbursement2);
 
+        //set title
+        setTitle("DISBURSEMENT");
+
+        // Set up Java / XML ListView listener (using Listener interface method)
+        final ListView list = (ListView) findViewById(R.id.listView2);
         list.setOnItemClickListener(this);
+
 
         new AsyncTask<Void, Void, List<Item>>()
         {
@@ -44,13 +42,12 @@ public class RetrievalActivity extends AppCompatActivity implements AdapterView.
             @Override
             protected void onPostExecute(List<Item> result)
             {
-                ItemAdapter adapter = new ItemAdapter(RetrievalActivity.this, R.layout.row3, items);
+                Disbursement2Adapter adapter = new Disbursement2Adapter(DisbursementActivity2.this, R.layout.row_disbursement_store, items);
                 list.setAdapter(adapter);
             }
         }.execute();
 
     }
-
 
     @Override
     public void onItemClick(AdapterView<?> av, View v, int position, long id)
@@ -86,5 +83,5 @@ public class RetrievalActivity extends AppCompatActivity implements AdapterView.
         }
     }
 
-
 }
+

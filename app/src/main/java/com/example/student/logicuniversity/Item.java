@@ -9,9 +9,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * Created by billpoon on 7/9/16.
- */
 public class Item extends HashMap<String, String>
 {
 
@@ -130,6 +127,7 @@ public class Item extends HashMap<String, String>
 
                 String row1 = "Bin#" + bin + " " + name;
                 String row2 = "Requested: " + Integer.toString(requested) + " " + "Actual: " + Integer.toString(actual);
+
                 Item item = new Item(id, bin, name, Integer.toString(requested), Integer.toString(actual), row1, row2);
                 items.add(item);
             }
@@ -141,7 +139,7 @@ public class Item extends HashMap<String, String>
         return items;
     }
 
-    public static Item getItemById(String ItemId)
+    /*public static Item getItemById(String ItemId)
     {
         Item item = null;
 
@@ -155,6 +153,28 @@ public class Item extends HashMap<String, String>
                 int balance = json.getInt("Balance");
 
                 item = new Item(code, name, uom, bin, Integer.toString(reOrderLevel), Integer.toString(balance));
+
+        } catch (Exception e)
+        {
+            Log.e("Exception", StackTrace.trace(e));
+        }
+        return item;
+    }*/
+
+    public static Item getItemByCode(String ItemCode)
+    {
+        Item item = null;
+
+        try{
+            JSONObject json = JSONParser.getJSONFromUrl(host + "ScanItem/" + ItemCode);
+            String code = json.getString("Code");
+            String name = json.getString("Name");
+            String uom = json.getString("Uom");
+            String bin = json.getString("Bin");
+            int reOrderLevel = json.getInt("ReOrderLevel");
+            int balance = json.getInt("Balance");
+
+            item = new Item(code, name, uom, bin, Integer.toString(reOrderLevel), Integer.toString(balance));
 
         } catch (Exception e)
         {
@@ -185,5 +205,4 @@ public class Item extends HashMap<String, String>
         }
         return items;
     }
-    
 }

@@ -109,27 +109,34 @@ public class MenuStoreActivity extends ListActivity
     {
         if (requestCode == CAPTURE_QRCODE)
         {
+            Log.i("event", "Scan button clicked 2");
             if (resultCode == RESULT_OK)
             {
+                Log.i("event", "Scan button clicked 3");
                 if (data.hasExtra("la.droid.qr.result"))
                 {
+                    Log.i("event", "Scan button clicked 4");
                     // res will hold the scanned QR code result
                     String res = data.getExtras().getString("la.droid.qr.result");
 
                     //To show the scanned result via a toast on screen
                     Toast.makeText(this, res, Toast.LENGTH_LONG).show();
 
-                    // Start new activity to show information about scanned partid QR code
-                    Intent i = new Intent(this, ListActivity.class);
+                    // Start new activity to show information about scanned itemCode (QR code)
+
+                    Intent i = new Intent(this, QRListActivity.class);
                     i.putExtra("key1", res);
+                    Log.i("event", "Scan button clicked 5");
                     startActivityForResult(i, REQUEST_CODE);
                 }
             } else if (resultCode == RESULT_CANCELED)
             {
                 // Capture cancelled
+                Log.i("event", "Scan button failed 1");
             } else
             {
                 // Capture failed
+                Log.i("event", "Scan button failed 2");
             }
         }
     }

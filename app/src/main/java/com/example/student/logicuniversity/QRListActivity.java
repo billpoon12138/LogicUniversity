@@ -20,7 +20,7 @@ public class QRListActivity extends AppCompatActivity
 {
 
     final static int []view = {R.id.editText1, R.id.editText2, R.id.editText3, R.id.editText4,R.id.editText5, R.id.editText6};
-    final static String []key = {"Code", "Name", "Uom", "Bin","ReOrderLevel", "Balance"};
+    final static String []key = {"code", "name", "uom", "bin","reOrderLevel", "balance"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -28,17 +28,17 @@ public class QRListActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qrlist);
 
-        // Received part id from QR code from previous activity intent and store in variable value1
+        // Received ItemCode from QR code from previous activity intent and store in variable value1
         Bundle extras = getIntent().getExtras();
         String value1 = extras.getString("key1");
 
-        // Use variable value1 (QR code value) and use getItemByID method to pull data into activity table view
+        // Use variable value1 (QR code value => ItemCode) and use getItemByID method to pull data into activity table view
         new AsyncTask<String, Void, Item>()
         {
             @Override
             protected Item doInBackground (String...params)
             {
-                return Item.getItemById(params[0]);
+                return Item.getItemByCode(params[0]);
             }
 
             // Returned Item object (item) value from getItemByID method as input parameter (result) for onPostExecute method
@@ -51,7 +51,7 @@ public class QRListActivity extends AppCompatActivity
                 {
                     // Do not want to use a standard toast; cannot set color and position
                     //Toast.makeText(getApplicationContext(), "THIS PART DOES NOT EXISTS !",Toast.LENGTH_SHORT).show();
-
+                    Log.i("event", "Search failed,  unable to find item code");
                     Toast toast = Toast.makeText(getApplicationContext(), "THIS PART DOES NOT EXISTS ! ", Toast.LENGTH_LONG);
                     TextView v = (TextView) toast.getView().findViewById(android.R.id.message);
                     v.setTextColor(Color.RED);
@@ -68,10 +68,10 @@ public class QRListActivity extends AppCompatActivity
                 }
 
                 // Extract the value from the EditText view and convert to an integer, assign to bal (balance)
-                EditText balance = (EditText) findViewById(view[8]);
+                EditText balance = (EditText) findViewById(view[5]);
                 int bal = Integer.valueOf(balance.getText().toString());
                 // Extract the value from the EditText view and convert to an integer, assign to reord (reorderlevel)
-                EditText reorder = (EditText) findViewById(view[7]);
+                EditText reorder = (EditText) findViewById(view[4]);
                 int reord = Integer.valueOf(reorder.getText().toString());
 
                 // Compare balance and reorderlevel, if less, create a toast to ask for top up.
@@ -90,6 +90,19 @@ public class QRListActivity extends AppCompatActivity
                 }
             }
         }.execute(value1);
+
+        // Menu button definition and listener assignment
+        Button clickButton = (Button) findViewById(R.id.buttonMenu);
+        clickButton.setOnClickListener( new View.OnClickListener()
+        {
+
+            @Override
+            public void onClick(View v)
+            {
+                finish();
+
+            }
+        });
 
 
     }

@@ -113,7 +113,7 @@ tools:context="com.example.student.logicuniversity.RejectionDepartment">
 <Button
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Cancel"
+    android:text="Back"
     android:id="@+id/buttonCancel"
     android:layout_alignParentBottom="true"
     android:layout_marginLeft="15dp"

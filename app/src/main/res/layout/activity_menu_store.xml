@@ -22,15 +22,13 @@
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:textSize="15sp"
         android:text="QR Scan"
         android:id="@+id/buttonScan"
+        android:layout_marginBottom="250dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="350dp"
-
-
-
         />
 
     <LinearLayout
