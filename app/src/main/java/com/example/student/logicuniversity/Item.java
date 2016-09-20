@@ -48,7 +48,14 @@ public class Item extends HashMap<String, String>
         put("bin", bin);
         put("reOrderLevel", reOrderLevel);
         put("balance",balance);
+    }
 
+    public Item(String name, String requested, String row1, String row2)
+    {
+        put("name", name);
+        put("requested", requested);
+        put("row1",row1);
+        put("row2", row2);
     }
 
     public static List<Item> getRequisition()
@@ -83,7 +90,7 @@ public class Item extends HashMap<String, String>
         List<Item> items = new ArrayList<Item>();
 
         try{
-            JSONArray jsons = JSONParser.getJSONArrayFromUrl(host + "Items");
+            JSONArray jsons = JSONParser.getJSONArrayFromUrl(host + "Requisition/" + departmentId);
             int nnn = jsons.length();
             for(int i = 0; i < jsons.length(); i ++)
             {
@@ -154,6 +161,29 @@ public class Item extends HashMap<String, String>
             Log.e("Exception", StackTrace.trace(e));
         }
         return item;
+    }
+
+    public static List<Item> getRequisitionByEmployeeId(String employeeId)
+    {
+        List<Item> items = new ArrayList<Item>();
+
+        try{
+            JSONArray jsons = JSONParser.getJSONArrayFromUrl(host + "EmployeeRequisitions/" + employeeId);
+            for(int i = 0; i < jsons.length(); i ++)
+            {
+                JSONObject json = jsons.getJSONObject(i);
+                String id = json.getString("Id");
+                String name = json.getString("Name");
+                int requested = json.getInt("Requested");
+                String row1 = name;
+                String row2 = "Requested: " + Integer.toString(requested);
+                Item item = new Item(name, Integer.toString(requested), row1, row2);
+                items.add(item);
+            }
+        } catch (Exception e) {
+            Log.e("Exception", StackTrace.trace(e));
+        }
+        return items;
     }
     
 }

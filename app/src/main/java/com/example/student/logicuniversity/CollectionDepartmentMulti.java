@@ -48,12 +48,14 @@ public class CollectionDepartmentMulti extends AppCompatActivity implements Adap
             }
         });*/
 
-        new AsyncTask<Void, Void, List<Item>>()
+        final String deptId = (String)getIntent().getSerializableExtra("DeptId");
+
+        new AsyncTask<String, Void, List<Item>>()
         {
             @Override
-            protected List<Item> doInBackground(Void... params)
+            protected List<Item> doInBackground(String... params)
             {
-                return items = Item.getRequisition();
+                return items = Item.getRequisitionByDepartmentId(deptId);
             }
             @Override
             protected void onPostExecute(List<Item> result)
@@ -61,7 +63,7 @@ public class CollectionDepartmentMulti extends AppCompatActivity implements Adap
                 CollectionAdapter adapter = new CollectionAdapter(CollectionDepartmentMulti.this, R.layout.row_collection_department, items);
                 list.setAdapter(adapter);
             }
-        }.execute();
+        }.execute(deptId);
 
     }
 

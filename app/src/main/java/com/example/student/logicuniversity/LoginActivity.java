@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Handler;
 import android.os.Message;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -62,6 +63,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private UserLoginTask mAuthTask = null;
 
     private String dept = "";
+    private String deptId = "";
 
     // UI references.
     private AutoCompleteTextView mEmailView;
@@ -76,6 +78,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         setContentView(R.layout.activity_login);
 
         sp = this.getSharedPreferences("userInfo", Context.MODE_WORLD_READABLE);
+//        sp = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
 //        //If in login status, keep the username and password
 //        if(sp.getBoolean("ISLOAD",false)) {
 //            Intent intent = new Intent(this, MenuStoreActivity.class);
@@ -351,6 +355,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             User user = User.Login(u);
             if (user != null && (!user.UserId.equals("null"))){
                 dept = user.Dept;
+                deptId = user.DeptId;
                 return true;
             }
 
@@ -382,14 +387,17 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 editor.putString("USER_NAME", mEmail);
                 editor.putString("PASSWORD", mPassword);
                 editor.putBoolean("ISLOAD", true);
+                editor.putString("DeptId", deptId);
                 editor.commit();
 
                 //New Activity
                 if(dept.equals("INV")){
                     Intent intent = new Intent(LoginActivity.this, MenuStoreActivity.class);
+                    intent.putExtra("DeptId", deptId);
                     startActivity(intent);
                 }else{
                     Intent intent = new Intent(LoginActivity.this, MenuDepartment.class);
+                    intent.putExtra("DeptId", deptId);
                     startActivity(intent);
                 }
             }

@@ -32,13 +32,14 @@ public class DistributeDepartment extends AppCompatActivity implements AdapterVi
         final ListView list = (ListView) findViewById(R.id.listView4);
         list.setOnItemClickListener(this);
 
+        final String employeeId = (String)getIntent().getSerializableExtra("EmployeeId");
 
-        new AsyncTask<Void, Void, List<Item>>()
+        new AsyncTask<String, Void, List<Item>>()
         {
             @Override
-            protected List<Item> doInBackground(Void... params)
+            protected List<Item> doInBackground(String... params)
             {
-                return items = Item.getRequisition();
+                return items = Item.getRequisitionByEmployeeId(employeeId);
             }
             @Override
             protected void onPostExecute(List<Item> result)
@@ -46,7 +47,7 @@ public class DistributeDepartment extends AppCompatActivity implements AdapterVi
                 DistributeAdapter adapter = new DistributeAdapter(DistributeDepartment.this, R.layout.row_distribute_department, items);
                 list.setAdapter(adapter);
             }
-        }.execute();
+        }.execute(employeeId);
 
     }
 

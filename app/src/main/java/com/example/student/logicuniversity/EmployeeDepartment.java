@@ -2,7 +2,9 @@ package com.example.student.logicuniversity;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,13 +34,18 @@ public class EmployeeDepartment extends AppCompatActivity implements AdapterView
         final ListView list = (ListView) findViewById(R.id.listView3);
         list.setOnItemClickListener(this);
 
+        // Get the departmentId
+//        SharedPreferences pref =  PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+//        String deptId = pref.getString("DeptId", "1");
+        String deptId = (String)getIntent().getSerializableExtra("DeptId");
 
-        new AsyncTask<Void, Void, List<Employee>>()
+
+        new AsyncTask<String, Void, List<Employee>>()
         {
             @Override
-            protected List<Employee> doInBackground(Void... params)
+            protected List<Employee> doInBackground(String... params)
             {
-                return employees = Employee.getEmployee("1");
+                return employees = Employee.getEmployee(params[0]);
             }
             @Override
             protected void onPostExecute(List<Employee> result)
@@ -46,7 +53,7 @@ public class EmployeeDepartment extends AppCompatActivity implements AdapterView
                 EmployeeAdapter adapter = new EmployeeAdapter(EmployeeDepartment.this, R.layout.row_employee_department, employees);
                 list.setAdapter(adapter);
             }
-        }.execute();
+        }.execute(deptId);
 
     }
 
@@ -54,10 +61,12 @@ public class EmployeeDepartment extends AppCompatActivity implements AdapterView
     public void onItemClick(AdapterView<?> av, View v, int position, long id)
     {
         //String item = (String) av.getAdapter().getItem(position);
+        Employee employee = (Employee) av.getAdapter().getItem(position);
 
         System.out.println("ListView Select item - Clicked");
-
+        String eid = employee.get("id");
         Intent intent = new Intent(getApplicationContext(), DistributeDepartment.class);
+        intent.putExtra("EmployeeId", eid);
         startActivity(intent);
 
         //Toast.makeText(getApplicationContext(), item + " selected", Toast.LENGTH_LONG).show();

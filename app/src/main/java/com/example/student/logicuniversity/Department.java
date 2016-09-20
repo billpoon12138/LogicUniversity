@@ -17,7 +17,8 @@ public class Department extends HashMap<String, String> {
     // Url
     final static String host = "http://10.10.2.81/WebSite/LogicUniversity/Service.svc/";
 
-    public Department(String id, String code, String name, String contact, String phone, String fax, String email, String collectionPointId) {
+    public Department(String id, String code, String name, String contact, String phone,
+                      String fax, String email, String collectionPointId, String status) {
         put("id", id);
         put("code", code);
         put("name", name);
@@ -26,6 +27,7 @@ public class Department extends HashMap<String, String> {
         put("fax", fax);
         put("email", email);
         put("collectionPointId", collectionPointId);
+        put("status", status);
     }
 
 
@@ -33,7 +35,7 @@ public class Department extends HashMap<String, String> {
         List<Department> departments = new ArrayList<Department>();
 
         try{
-            JSONArray jsons = JSONParser.getJSONArrayFromUrl(host + "Departments");
+            JSONArray jsons = JSONParser.getJSONArrayFromUrl(host + "DepartmentsWithRequisitionStatus");
             int nnn = jsons.length();
             for(int i = 0; i < jsons.length(); i ++){
                 JSONObject json = jsons.getJSONObject(i);
@@ -45,7 +47,8 @@ public class Department extends HashMap<String, String> {
                 String fax = json.getString("Fax");
                 String email = json.getString("Email");
                 String collectionPointId = json.getString("CollectionpointId");
-                Department department = new Department(id, code, name, contact, phone, fax, email, collectionPointId);
+                String status = json.getString("Status");
+                Department department = new Department(id, code, name, contact, phone, fax, email, collectionPointId, status);
                 departments.add(department);
             }
         } catch (Exception e) {

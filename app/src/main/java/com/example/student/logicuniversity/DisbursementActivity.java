@@ -42,7 +42,9 @@ public class DisbursementActivity extends AppCompatActivity implements AdapterVi
 //        Toast.makeText(getApplicationContext(), item + " selected",
 //                Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this, CollectionDepartmentMulti.class);
-        intent.putExtra("department", department);
+//        intent.putExtra("department", department);
+        String did = department.get("id");
+        intent.putExtra("DeptId", did);
         startActivity(intent);
     }
 }

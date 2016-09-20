@@ -2,6 +2,8 @@ package com.example.student.logicuniversity;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,12 +13,14 @@ import android.widget.ListView;
 public class MenuDepartment extends ListActivity
 {
     String[] menulist = {"Collection", "Distribute"}; // Names for the 2 ListView rows
+    String deptId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_department);
+        deptId = (String)getIntent().getSerializableExtra("DeptId");
 
         //set title
         setTitle("MENU");
@@ -35,11 +39,15 @@ public class MenuDepartment extends ListActivity
         if (position == 0) // OnClick first row of ListView, transit to next activity (Collection screen)
         {
             Intent intent = new Intent(this, CollectionDepartmentMulti.class);
+            intent.putExtra("DeptId", deptId);
             startActivity(intent);
         }
         else if (position == 1) // OnClick second row of ListView, transit to next activity (Distribute Employee screen)
         {
+//            SharedPreferences pref =  PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+//            String deptId = pref.getString("DeptId", "1");
             Intent intent = new Intent(this, EmployeeDepartment.class);
+            intent.putExtra("DeptId", deptId);
             startActivity(intent);
         }
 
