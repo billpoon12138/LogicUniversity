@@ -27,8 +27,10 @@ public class MenuStoreActivity extends ListActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_store);
 
+
+
         // Use Array Adaptor to pull data from String array to ListView
-        ArrayAdapter<String> adaptor = new ArrayAdapter<String>(getListView().getContext(), android.R.layout.simple_list_item_activated_1, menulist);
+        ArrayAdapter<String> adaptor = new ArrayAdapter<String>(getListView().getContext(), R.layout.mytextview, menulist);
         getListView().setAdapter(adaptor);
 
         // Create scan button event listener
@@ -73,11 +75,11 @@ public class MenuStoreActivity extends ListActivity
             startActivity(intent);
         }
 
-        else if (position == 2)
+        /*else if (position == 2)
         {
             Intent intent = new Intent(this, DisbursementActivity.class);
             startActivity(intent);
-        }
+        }*/
 
 /*        else if (position == 3)
         {
