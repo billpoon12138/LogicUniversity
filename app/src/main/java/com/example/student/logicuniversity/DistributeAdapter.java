@@ -19,7 +19,8 @@ public class DistributeAdapter extends ArrayAdapter<Item>
 {
     private List<Item> items;
 
-    public DistributeAdapter(Context context, int resource, List<Item> items) {
+    public DistributeAdapter(Context context, int resource, List<Item> items)
+    {
         super(context, resource, items);
         this.items = items;
     }

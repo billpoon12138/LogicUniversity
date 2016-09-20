@@ -30,11 +30,14 @@ public class DepartmentAdapter extends ArrayAdapter<Department> {
         View view = inflater.inflate(R.layout.row4, null);
         Department department = departments.get(position);
 
-        if(department != null) {
+        if(department != null)
+        {
             TextView name = (TextView) view.findViewById(R.id.text1);
             name.setText(department.get("name"));
+
 //            TextView id = (TextView) view.findViewById(R.id.text2);
 //            id.setText(department.get("id"));
+
             TextView status = (TextView) view.findViewById(R.id.text3);
             status.setText("Checked");
         }

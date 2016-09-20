@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
@@ -50,11 +51,40 @@ public class RetrievalActivity extends AppCompatActivity implements AdapterView.
 
     }
 
+
     @Override
     public void onItemClick(AdapterView<?> av, View v, int position, long id)
     {
         String item = (String) av.getAdapter().getItem(position);
+
+        System.out.println("ListView Select item - Clicked");
+
         Toast.makeText(getApplicationContext(), item + " selected",
                 Toast.LENGTH_LONG).show();
     }
+
+    public void onCheckboxClicked(View view)
+    {
+        // Is the view now checked?
+        boolean checked = ((CheckBox) view).isChecked();
+
+        // Check which checkbox was clicked
+        switch(view.getId())
+        {
+            case R.id.checkBox1:
+                if (checked)
+                {
+                    System.out.println("ListView CheckBox item - Clicked");
+
+                }
+                else
+                {
+
+                }
+                break;
+
+        }
+    }
+
+
 }

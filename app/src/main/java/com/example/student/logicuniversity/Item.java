@@ -120,6 +120,7 @@ public class Item extends HashMap<String, String>
 
                 String row1 = "Bin#" + bin + " " + name;
                 String row2 = "Requested: " + Integer.toString(requested) + " " + "Actual: " + Integer.toString(actual);
+
                 Item item = new Item(id, bin, name, Integer.toString(requested), Integer.toString(actual), row1, row2);
                 items.add(item);
             }
