@@ -10,20 +10,19 @@
         <!--android:layout_alignParentStart="true" />-->
 
     <TextView
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text=""
         android:id="@+id/text1"
-
         android:layout_alignParentTop="true" />
         <!--android:layout_toEndOf="@+id/imageView" -->
-    <!--android:layout_marginStart="70dp"-->
+        <!--android:layout_marginStart="70dp"-->
 
-
+    <!-- Text2 is not used -->
     <TextView
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text=""
         android:id="@+id/text2"
@@ -31,10 +30,11 @@
         android:layout_alignStart="@+id/text1" />
 
     <TextView
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text=""
         android:id="@+id/text3"
         android:layout_alignParentRight="true"/>
         <!--android:layout_alignParentStart="true" -->
+
 </RelativeLayout>
