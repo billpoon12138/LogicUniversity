@@ -14,7 +14,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RetrievalActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class RetrievalActivity extends AppCompatActivity implements AdapterView.OnItemClickListener
+{
 
     List<Item> items;
 

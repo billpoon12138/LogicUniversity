@@ -28,7 +28,7 @@ public class EmployeeDepartment extends AppCompatActivity implements AdapterView
         setContentView(R.layout.activity_employee_department);
 
         //set title
-        setTitle("EMPLOYEE");
+        setTitle("DISTRIBUTE");
 
         // Set up Java / XML ListView listener (using Listener interface method)
         final ListView list = (ListView) findViewById(R.id.listView3);

@@ -19,19 +19,23 @@ public class EmployeeAdapter extends ArrayAdapter<Employee>
 
     private List<Employee> employees;
 
-    public EmployeeAdapter(Context context, int resource, List<Employee> employees) {
+    public EmployeeAdapter(Context context, int resource, List<Employee> employees)
+    {
         super(context, resource, employees);
         this.employees = employees;
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent)
+    {
         LayoutInflater inflater = (LayoutInflater) getContext()
                 .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+
         View view = inflater.inflate(R.layout.row_employee_department, null);
         Employee item = employees.get(position);
 
-        if(item != null) {
+        if(item != null)
+        {
             TextView name = (TextView) view.findViewById(R.id.text1);
             name.setText(item.get("name"));
 

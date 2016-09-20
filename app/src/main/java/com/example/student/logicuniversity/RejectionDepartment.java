@@ -39,7 +39,7 @@ public class RejectionDepartment extends ListActivity
 
         setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_checked, option));
 
-        // Cancel button definition and listener assignment
+        /*// Cancel button definition and listener assignment
         Button clickButton = (Button) findViewById(R.id.buttonCancel);
         clickButton.setOnClickListener( new View.OnClickListener()
         {
@@ -50,7 +50,7 @@ public class RejectionDepartment extends ListActivity
                 finish();
 
             }
-        });
+        });*/
 
 
     }
