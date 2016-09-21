@@ -3,13 +3,12 @@ package com.example.student.logicuniversity;
 import android.app.ActionBar;
 import android.app.ListActivity;
 import android.content.Intent;
-<<<<<<< HEAD
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-=======
+
 
 import android.support.v7.app.ActionBarActivity;
->>>>>>> a0ebff28448a3259d7771aac2ed5c405cc0826d5
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
