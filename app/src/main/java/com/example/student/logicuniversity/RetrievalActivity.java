@@ -5,13 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
-import java.util.ArrayList;
+import com.example.student.logicuniversity.adapter.ItemAdapter;
+import com.example.student.logicuniversity.model.Item;
+
 import java.util.List;
 
 public class RetrievalActivity extends AppCompatActivity implements AdapterView.OnItemClickListener

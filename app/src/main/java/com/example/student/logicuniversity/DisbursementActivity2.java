@@ -1,6 +1,5 @@
 package com.example.student.logicuniversity;
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +8,10 @@ import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.example.student.logicuniversity.adapter.Disbursement2Adapter;
+import com.example.student.logicuniversity.model.Item;
+
 import java.util.List;
 
 
@@ -31,13 +34,15 @@ public class DisbursementActivity2 extends AppCompatActivity implements AdapterV
         final ListView list = (ListView) findViewById(R.id.listView2);
         list.setOnItemClickListener(this);
 
+        final String deptId = (String)getIntent().getSerializableExtra("DeptId");
 
-        new AsyncTask<Void, Void, List<Item>>()
+
+        new AsyncTask<String, Void, List<Item>>()
         {
             @Override
-            protected List<Item> doInBackground(Void... params)
+            protected List<Item> doInBackground(String... params)
             {
-                return items = Item.getRequisition();
+                return items = Item.getRequisitionByDepartmentId(params[0]);
             }
             @Override
             protected void onPostExecute(List<Item> result)
@@ -45,7 +50,7 @@ public class DisbursementActivity2 extends AppCompatActivity implements AdapterV
                 Disbursement2Adapter adapter = new Disbursement2Adapter(DisbursementActivity2.this, R.layout.row_disbursement_store, items);
                 list.setAdapter(adapter);
             }
-        }.execute();
+        }.execute(deptId);
 
     }
 

@@ -1,6 +1,9 @@
-package com.example.student.logicuniversity;
+package com.example.student.logicuniversity.model;
 
 import android.util.Log;
+
+import com.example.student.logicuniversity.tool.JSONParser;
+import com.example.student.logicuniversity.tool.StackTrace;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

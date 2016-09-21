@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
+
+import com.example.student.logicuniversity.adapter.DepartmentAdapter;
+import com.example.student.logicuniversity.model.Department;
 
 import java.util.List;
 
@@ -50,6 +52,8 @@ public class DisbursementActivity extends AppCompatActivity implements AdapterVi
 //        Toast.makeText(getApplicationContext(), item + " selected",
 //                Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this, DisbursementActivity2.class);
+        String did = department.get("id");
+        intent.putExtra("DeptId", did);
         intent.putExtra("department", department);
         startActivity(intent);
     }
