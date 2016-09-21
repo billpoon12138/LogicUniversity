@@ -34,7 +34,7 @@
         android:layout_alignTop="@+id/text2"
         android:layout_toRightOf="@+id/text2"
         android:layout_toEndOf="@+id/text2"
-        android:layout_marginLeft="23dp"
+        android:layout_marginLeft="10dp"
         />
 
     <TextView
@@ -46,7 +46,7 @@
         android:layout_alignTop="@+id/text3"
         android:layout_toRightOf="@+id/text3"
         android:layout_toEndOf="@+id/text3"
-        android:layout_marginLeft="23dp"
+        android:layout_marginLeft="10dp"
         />
 
     <TextView
@@ -58,7 +58,7 @@
         android:layout_alignTop="@+id/text4"
         android:layout_toRightOf="@+id/text4"
         android:layout_toEndOf="@+id/text4"
-        android:layout_marginLeft="23dp"
+        android:layout_marginLeft="10dp"
         />
 
     <TextView
@@ -92,8 +92,12 @@
         android:onClick="onCheckboxClicked"
         android:layout_alignTop="@+id/text5"
         android:layout_toRightOf="@+id/text5"
+        android:layout_alignBottom="@+id/text5"/>
+
+        <!--android:layout_alignTop="@+id/text5"
+        android:layout_toRightOf="@+id/text5"
         android:layout_toEndOf="@+id/text5"
-        android:layout_alignParentRight="true"
-        />
+        android:layout_alignParentRight="true"-->
+
 
 </RelativeLayout>
