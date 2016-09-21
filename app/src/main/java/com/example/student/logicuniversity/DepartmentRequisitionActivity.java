@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 
+import com.example.student.logicuniversity.model.Department;
+
 public class DepartmentRequisitionActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     @Override

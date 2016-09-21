@@ -1,4 +1,4 @@
-package com.example.student.logicuniversity;
+package com.example.student.logicuniversity.tool;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;

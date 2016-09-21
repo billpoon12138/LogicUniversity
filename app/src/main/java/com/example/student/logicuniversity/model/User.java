@@ -1,6 +1,8 @@
-package com.example.student.logicuniversity;
+package com.example.student.logicuniversity.model;
 
 import android.util.Log;
+
+import com.example.student.logicuniversity.tool.JSONParser;
 
 import org.json.JSONObject;
 
@@ -9,13 +11,13 @@ import org.json.JSONObject;
  */
 public class User {
 
-    String Username;
-    String UserId;
-    String Email;
-    String Password;
-    String Role;
-    String Dept;
-    String DeptId;
+    public String Username;
+    public String UserId;
+    public String Email;
+    public String Password;
+    public String Role;
+    public String Dept;
+    public String DeptId;
 
     public void setPassword(String password) {
         Password = password;

@@ -1,4 +1,4 @@
-package com.example.student.logicuniversity;
+package com.example.student.logicuniversity.adapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,17 +9,16 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import com.example.student.logicuniversity.R;
+import com.example.student.logicuniversity.model.Item;
+
 import java.util.List;
 
-/**
- * Created by student on 8/9/16.
- */
-public class ItemAdapter extends ArrayAdapter<Item>
+public class Disbursement2Adapter extends ArrayAdapter<Item>
 {
-
     private List<Item> items;
 
-    public ItemAdapter(Context context, int resource, List<Item> items)
+    public Disbursement2Adapter(Context context, int resource, List<Item> items)
     {
         super(context, resource, items);
         this.items = items;
@@ -30,7 +29,7 @@ public class ItemAdapter extends ArrayAdapter<Item>
     {
         LayoutInflater inflater = (LayoutInflater) getContext()
                 .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.row3, null);
+        View view = inflater.inflate(R.layout.row_disbursement_store, null);
         Item item = items.get(position);
 
         if(item != null)
@@ -44,11 +43,9 @@ public class ItemAdapter extends ArrayAdapter<Item>
             TextView actual = (TextView) view.findViewById(R.id.text5);
             actual.setText(item.get("actual"));
 
-            TextView bin = (TextView) view.findViewById(R.id.text7);
-            bin.setText(item.get("bin"));
-
             CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkBox1);
         }
         return view;
     }
+
 }

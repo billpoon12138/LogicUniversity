@@ -1,4 +1,4 @@
-package com.example.student.logicuniversity;
+package com.example.student.logicuniversity.tool;
 
 import android.util.Log;
 

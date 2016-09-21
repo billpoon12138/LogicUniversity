@@ -7,6 +7,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.student.logicuniversity.model.Department;
+
 public class StoreMenuActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     @Override
