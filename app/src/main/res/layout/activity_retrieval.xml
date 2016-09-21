@@ -9,6 +9,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/images88"
     tools:context="com.example.student.logicuniversity.RetrievalActivity">
+    <!--
+    android:background="#607d8b"
+    android:background="#c5cae9"
+    -->
 
     <ListView
         android:layout_width="wrap_content"
