@@ -88,7 +88,8 @@ public class CollectionDepartmentMulti extends AppCompatActivity implements Adap
         // Check which checkbox was clicked
         switch(view.getId())
         {
-            case R.id.checkBox1:
+            // CheckBox1 not used
+            /*case R.id.checkBox1:
                 if (checked)
                 {
                     System.out.println("ListView CheckBox item - Clicked");
@@ -98,7 +99,7 @@ public class CollectionDepartmentMulti extends AppCompatActivity implements Adap
                 {
 
                 }
-                break;
+                break;*/
 
             case R.id.checkBox2:
                 if (checked)
