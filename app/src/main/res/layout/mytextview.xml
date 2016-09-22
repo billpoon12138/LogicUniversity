@@ -6,4 +6,5 @@
     android:layout_height="wrap_content"
     android:textAppearance="?android:attr/textAppearanceLarge"
     android:layout_marginLeft="23dp"
-     />
+    android:textColor="#FFFFFF"
+    />

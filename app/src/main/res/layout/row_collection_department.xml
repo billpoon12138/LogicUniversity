@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
 
     <TextView
@@ -14,6 +15,7 @@
         android:layout_alignParentLeft="true"
         android:layout_centerHorizontal="true"
         android:paddingTop="20dp"
+        android:textColor="#FFFFFF"
         />
 
     <CheckBox
@@ -26,6 +28,7 @@
         android:layout_toRightOf="@+id/text1"
         android:layout_toEndOf="@+id/text1"
         android:layout_marginLeft="23dp"
+        android:buttonTint="#FFFFFF"
         />
 
     <TextView
@@ -38,17 +41,19 @@
         android:layout_toRightOf="@+id/checkBox2"
         android:layout_toEndOf="@+id/checkBox2"
         android:layout_marginLeft="1dp"
+        android:textColor="#FFFFFF"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Requested"
+        android:text="Needed:"
         android:id="@+id/text2"
         android:layout_below="@+id/text1"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="15dp"
+        android:textColor="#FFFFFF"
         />
 
     <TextView
@@ -61,18 +66,20 @@
         android:layout_toRightOf="@+id/text2"
         android:layout_toEndOf="@+id/text2"
         android:layout_marginLeft="10dp"
+        android:textColor="#FFFFFF"
         />
 
     <TextView
         android:layout_width="60dp"
         android:layout_height="20dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Actual"
+        android:text="Actual:"
         android:id="@+id/text4"
         android:layout_alignTop="@+id/text3"
         android:layout_toRightOf="@+id/text3"
         android:layout_toEndOf="@+id/text3"
         android:layout_marginLeft="10dp"
+        android:textColor="#FFFFFF"
         />
 
     <TextView
@@ -85,6 +92,7 @@
         android:layout_toRightOf="@+id/text4"
         android:layout_toEndOf="@+id/text4"
         android:layout_marginLeft="10dp"
+        android:textColor="#FFFFFF"
         />
 
 
@@ -97,6 +105,7 @@
         android:layout_alignTop="@+id/text5"
         android:layout_toRightOf="@+id/text5"
         android:layout_alignBottom="@+id/text5"
+        android:buttonTint="#FFFFFF"
         />
         <!--android:layout_alignParentBottom="true"
          android:layout_marginLeft="23dp"

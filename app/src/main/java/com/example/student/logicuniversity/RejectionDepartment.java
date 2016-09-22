@@ -3,6 +3,7 @@ package com.example.student.logicuniversity;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckedTextView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class RejectionDepartment extends ListActivity
@@ -23,6 +25,7 @@ public class RejectionDepartment extends ListActivity
             "Wrong Items",
             "Short Items"
     };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -38,6 +41,8 @@ public class RejectionDepartment extends ListActivity
         listview.setTextFilterEnabled(true);
 
         setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_checked, option));
+
+
 
         /*// Cancel button definition and listener assignment
         Button clickButton = (Button) findViewById(R.id.buttonCancel);

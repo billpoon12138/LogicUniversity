@@ -9,7 +9,7 @@ xmlns:tools="http://schemas.android.com/tools"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/images88"
-tools:context="com.example.student.logicuniversity.QRListActivity">
+    tools:context="com.example.student.logicuniversity.QRListActivity">
     <!-- android:background="#607d8b" -->
 
 <TableLayout
@@ -28,13 +28,17 @@ tools:context="com.example.student.logicuniversity.QRListActivity">
             android:layout_height="wrap_content"
             android:padding="6dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Code" />
+            android:text="Code"
+            android:textColor="#FFFFFF"
+            />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/editText1" />
+            android:id="@+id/editText1"
+            android:textColor="#FFFFFF"
+            />
     </TableRow>
 
     <TableRow
@@ -45,69 +49,18 @@ tools:context="com.example.student.logicuniversity.QRListActivity">
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:padding="6dp"
-            android:text="Name" />
+            android:text="Name"
+            android:textColor="#FFFFFF"
+            />
 
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/editText2" />
-
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:padding="6dp"
-            android:text="UOM" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/editText3" />
-
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:padding="6dp"
-            android:text="Bin"  />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/editText4"/>
-
-    </TableRow>
-
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:padding="6dp"
-            android:text="ReorderLevel"  />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/editText5"/>
+            android:id="@+id/editText2"
+            android:textColor="#FFFFFF"
+            />
 
     </TableRow>
 
@@ -119,13 +72,85 @@ tools:context="com.example.student.logicuniversity.QRListActivity">
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:padding="6dp"
-            android:text="Balance"  />
+            android:text="UOM"
+            android:textColor="#FFFFFF"
+            />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/editText6"/>
+            android:id="@+id/editText3"
+            android:textColor="#FFFFFF"
+            />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:padding="6dp"
+            android:text="Bin"
+            android:textColor="#FFFFFF"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/editText4"
+            android:textColor="#FFFFFF"
+            />
+
+    </TableRow>
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:padding="6dp"
+            android:text="ReorderLevel"
+            android:textColor="#FFFFFF"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/editText5"
+            android:textColor="#FFFFFF"
+            />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:padding="6dp"
+            android:text="Balance"
+            android:textColor="#FFFFFF"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/editText6"
+            android:textColor="#FFFFFF"
+            />
 
     </TableRow>
 
@@ -139,6 +164,7 @@ tools:context="com.example.student.logicuniversity.QRListActivity">
         android:id="@+id/buttonMenu"
         android:layout_below="@+id/tableLayout"
         android:layout_marginTop="180dp"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        />
 
 </RelativeLayout>
