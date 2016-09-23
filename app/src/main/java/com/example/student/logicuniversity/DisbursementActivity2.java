@@ -28,7 +28,7 @@ public class DisbursementActivity2 extends AppCompatActivity implements AdapterV
         setContentView(R.layout.activity_disbursement2);
 
         //set title
-        setTitle("Breakdown By Department");
+        setTitle("BREAKDOWN BY DEPARTMENT");
 
         // Set up Java / XML ListView listener (using Listener interface method)
         final ListView list = (ListView) findViewById(R.id.listView2);
