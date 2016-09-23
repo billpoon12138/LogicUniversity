@@ -41,7 +41,7 @@ public class CollectionAdapter extends ArrayAdapter<Item>
             TextView actual = (TextView) view.findViewById(R.id.text5);
             actual.setText(item.get("actual"));
 
-            CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkBox1);
+            //CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkBox1);
         }
         return view;
     }
