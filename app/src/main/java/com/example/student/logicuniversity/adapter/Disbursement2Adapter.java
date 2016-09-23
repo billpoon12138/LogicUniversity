@@ -57,17 +57,29 @@ public class Disbursement2Adapter extends ArrayAdapter<Item>
                     if(checkBox.isChecked()){
 //                        System.out.println("ListView CheckBox item - Clicked");
 //                        System.out.println(item);
-                        StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.LAX);
+//                        StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.LAX);
                         new AsyncTask<String, Void, String>()
                         {
                             @Override
                             protected String doInBackground(String... params)
                             {
-                                Department.getDepartments();
+//                                Department.getDepartments();
+                                item.changeDepartmentRequisitionDetailRetrieveStatusToRetrieve(item.get("deptReqDetailId"));
                                 return "";
                             };
                         }.execute(item.get("deptReqDetailId"));
-                        item.changeDepartmentRequisitionDetailRetrieveStatus(item.get("deptReqDetailId"));
+//                        item.changeDepartmentRequisitionDetailRetrieveStatus(item.get("deptReqDetailId"));
+                    }else{
+                        new AsyncTask<String, Void, String>()
+                        {
+                            @Override
+                            protected String doInBackground(String... params)
+                            {
+//                                Department.getDepartments();
+                                item.changeDepartmentRequisitionDetailRetrieveStatusToOpen(item.get("deptReqDetailId"));
+                                return "";
+                            };
+                        }.execute(item.get("deptReqDetailId"));
                     }
                 }
             });

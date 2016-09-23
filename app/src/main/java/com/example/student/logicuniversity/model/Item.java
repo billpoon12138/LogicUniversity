@@ -247,9 +247,18 @@ public class Item extends HashMap<String, String>
         return items;
     }
 
-    public void changeDepartmentRequisitionDetailRetrieveStatus(String deptRDId){
+    public void changeDepartmentRequisitionDetailRetrieveStatusToRetrieve(String deptRDId){
         try{
             JSONParser.getUrl(host + "DepartmentRequisitionsDetail/" + deptRDId);
+        } catch (Exception e)
+        {
+            Log.e("Exception", StackTrace.trace(e));
+        }
+    }
+
+    public void changeDepartmentRequisitionDetailRetrieveStatusToOpen(String deptRDId){
+        try{
+            JSONParser.getUrl(host + "DepartmentRequisitionsDetailUnCheck/" + deptRDId);
         } catch (Exception e)
         {
             Log.e("Exception", StackTrace.trace(e));
