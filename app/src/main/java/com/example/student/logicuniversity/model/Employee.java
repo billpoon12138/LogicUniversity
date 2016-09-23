@@ -34,6 +34,13 @@ public class Employee extends HashMap<String, String>
         put("name", name);
     }
 
+    public Employee(String id, String name, String retrieveStatus)
+    {
+        put("id", id);
+        put("name", name);
+        put("retrieveStatus", retrieveStatus);
+    }
+
     public static List<Item> getRequisition()
     {
         List<Item> items = new ArrayList<Item>();
@@ -70,7 +77,8 @@ public class Employee extends HashMap<String, String>
                 JSONObject json = jsons.getJSONObject(i);
                 String id = json.getString("Id");
                 String name = json.getString("Name");
-                Employee employee = new Employee(id, name);
+                String retrieveStatus = json.getString("RetrieveStatus");
+                Employee employee = new Employee(id, name, retrieveStatus);
                 employees.add(employee);
             }
         } catch (Exception e) {

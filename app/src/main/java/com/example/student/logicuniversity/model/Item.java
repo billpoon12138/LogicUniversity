@@ -42,6 +42,20 @@ public class Item extends HashMap<String, String>
         put("status", status);
     }
 
+    public Item(String id, String bin, String name, String requested,
+                String actual, String row1, String row2, String status, String deptReqDetailId)
+    {
+        put("id", id);
+        put("bin", bin);
+        put("name", name);
+        put("requested", requested);
+        put("actual", actual);
+        put("row1",row1);
+        put("row2", row2);
+        put("status", status);
+        put("deptReqDetailId", deptReqDetailId);
+    }
+
     public Item(String id, String bin, String name, String requested, String actual)
     {
         put("id", id);
@@ -68,6 +82,15 @@ public class Item extends HashMap<String, String>
         put("requested", requested);
         put("row1",row1);
         put("row2", row2);
+    }
+
+    public Item(String name, String requested, String row1, String row2, String retrieveStatus, int recieve)
+    {
+        put("name", name);
+        put("requested", requested);
+        put("row1",row1);
+        put("row2", row2);
+        put("retrieveStatus", retrieveStatus);
     }
 
     public static List<Item> getRequisition()
@@ -113,9 +136,10 @@ public class Item extends HashMap<String, String>
                 int requested = json.getInt("Requested");
                 int actual = json.getInt("Actual");
                 String status = json.getString("Status");
+                String deptReqDetailId = json.getString("DeptReqDetailId");
                 String row1 = "Bin#" + bin + " " + name;
                 String row2 = "Requested: " + Integer.toString(requested) + " " + "Actual: " + Integer.toString(actual);
-                Item item = new Item(id, bin, name, Integer.toString(requested), Integer.toString(actual), row1, row2, status);
+                Item item = new Item(id, bin, name, Integer.toString(requested), Integer.toString(actual), row1, row2, status, deptReqDetailId);
                 items.add(item);
             }
         } catch (Exception e) {
@@ -198,6 +222,7 @@ public class Item extends HashMap<String, String>
         return item;
     }
 
+    // Get requisitions by employeeId with retrieval status.
     public static List<Item> getRequisitionByEmployeeId(String employeeId)
     {
         List<Item> items = new ArrayList<Item>();
@@ -212,12 +237,22 @@ public class Item extends HashMap<String, String>
                 int requested = json.getInt("Requested");
                 String row1 = name;
                 String row2 = "Requested: " + Integer.toString(requested);
-                Item item = new Item(name, Integer.toString(requested), row1, row2);
+                String retrieveStatus = json.getString("RetrieveStatus");
+                Item item = new Item(name, Integer.toString(requested), row1, row2, retrieveStatus, 0);
                 items.add(item);
             }
         } catch (Exception e) {
             Log.e("Exception", StackTrace.trace(e));
         }
         return items;
+    }
+
+    public void changeDepartmentRequisitionDetailRetrieveStatus(String deptRDId){
+        try{
+            JSONParser.getUrl(host + "DepartmentRequisitionsDetail/" + deptRDId);
+        } catch (Exception e)
+        {
+            Log.e("Exception", StackTrace.trace(e));
+        }
     }
 }

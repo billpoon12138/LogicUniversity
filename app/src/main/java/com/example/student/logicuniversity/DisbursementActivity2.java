@@ -28,7 +28,7 @@ public class DisbursementActivity2 extends AppCompatActivity implements AdapterV
         setContentView(R.layout.activity_disbursement2);
 
         //set title
-        setTitle("DISBURSEMENT");
+        setTitle("Breakdown By Department");
 
         // Set up Java / XML ListView listener (using Listener interface method)
         final ListView list = (ListView) findViewById(R.id.listView2);
@@ -65,28 +65,31 @@ public class DisbursementActivity2 extends AppCompatActivity implements AdapterV
                 Toast.LENGTH_LONG).show();
     }
 
-    public void onCheckboxClicked(View view)
-    {
-        // Is the view now checked?
-        boolean checked = ((CheckBox) view).isChecked();
-
-        // Check which checkbox was clicked
-        switch(view.getId())
-        {
-            case R.id.checkBox1:
-                if (checked)
-                {
-                    System.out.println("ListView CheckBox item - Clicked");
-
-                }
-                else
-                {
-
-                }
-                break;
-
-        }
-    }
+//    public void onCheckboxClicked(View view)
+//    {
+//        // Is the view now checked?
+//        boolean checked = ((CheckBox) view).isChecked();
+//
+//        // Check which checkbox was clicked
+//        switch(view.getId())
+//        {
+//            case R.id.checkBox1:
+//                if (checked)
+//                {
+//                    System.out.println("ListView CheckBox item - Clicked");
+//                    System.out.println(view.getId());
+//
+//
+//
+//                }
+//                else
+//                {
+//                    System.out.println("ListView CheckBox item - UnClick");
+//                }
+//                break;
+//
+//        }
+//    }
 
 }
 

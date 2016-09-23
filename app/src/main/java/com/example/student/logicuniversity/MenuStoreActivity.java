@@ -18,7 +18,7 @@ public class MenuStoreActivity extends ListActivity
     static final int CAPTURE_QRCODE = 1234;
     static final int REQUEST_CODE = 2222;
 
-    String[] menulist = {"Retrieval", "Disbursement"}; // Names for the 2 ListView rows
+    String[] menulist = {"Retrieval", "Breakdown By Department"}; // Names for the 2 ListView rows
     // "Inventory Update", "Inventory Audit", "Scan bin" taken out of string array
 
     @Override

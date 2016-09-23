@@ -43,7 +43,12 @@ public class EmployeeAdapter extends ArrayAdapter<Employee>
             name.setText(item.get("name"));
 
             TextView id = (TextView) view.findViewById(R.id.text2);
-            id.setText(item.get("id"));
+            if(item.get("retrieveStatus").equals("True")){
+                id.setText("Finish");
+            }else{
+                id.setText("UnCheck");
+            }
+
 
         }
         return view;
