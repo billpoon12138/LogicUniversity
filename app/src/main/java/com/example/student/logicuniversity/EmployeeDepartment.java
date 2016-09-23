@@ -66,6 +66,7 @@ public class EmployeeDepartment extends AppCompatActivity implements AdapterView
         String eid = employee.get("id");
         Intent intent = new Intent(getApplicationContext(), DistributeDepartment.class);
         intent.putExtra("EmployeeId", eid);
+        intent.putExtra("EmployeeReqId", employee.get("EmployeeReqId"));
         startActivity(intent);
 
         //Toast.makeText(getApplicationContext(), item + " selected", Toast.LENGTH_LONG).show();

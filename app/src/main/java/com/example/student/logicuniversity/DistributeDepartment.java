@@ -40,7 +40,7 @@ public class DistributeDepartment extends AppCompatActivity implements AdapterVi
             @Override
             protected List<Item> doInBackground(String... params)
             {
-                return items = Item.getRequisitionByEmployeeId(employeeId);
+                return items = Item.getRequisitionByEmployeeIdWithERDId(employeeId);
             }
             @Override
             protected void onPostExecute(List<Item> result)
@@ -63,28 +63,28 @@ public class DistributeDepartment extends AppCompatActivity implements AdapterVi
                 Toast.LENGTH_LONG).show();
     }
 
-    public void onCheckboxClicked(View view)
-    {
-        // Is the view now checked?
-        boolean checked = ((CheckBox) view).isChecked();
-
-        // Check which checkbox was clicked
-        switch(view.getId())
-        {
-            case R.id.checkBox1:
-                if (checked)
-                {
-                    System.out.println("ListView CheckBox item - Clicked");
-
-                }
-                else
-                {
-
-                }
-                break;
-
-        }
-    }
+//    public void onCheckboxClicked(View view)
+//    {
+//        // Is the view now checked?
+//        boolean checked = ((CheckBox) view).isChecked();
+//
+//        // Check which checkbox was clicked
+//        switch(view.getId())
+//        {
+//            case R.id.checkBox1:
+//                if (checked)
+//                {
+//                    System.out.println("ListView CheckBox item - Clicked");
+//
+//                }
+//                else
+//                {
+//
+//                }
+//                break;
+//
+//        }
+//    }
 
 }
 

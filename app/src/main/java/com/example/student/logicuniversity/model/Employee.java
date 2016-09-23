@@ -34,11 +34,12 @@ public class Employee extends HashMap<String, String>
         put("name", name);
     }
 
-    public Employee(String id, String name, String retrieveStatus)
+    public Employee(String id, String name, String retrieveStatus, String employeeReqId)
     {
         put("id", id);
         put("name", name);
         put("retrieveStatus", retrieveStatus);
+        put("employeeReqId", employeeReqId);
     }
 
     public static List<Item> getRequisition()
@@ -71,14 +72,15 @@ public class Employee extends HashMap<String, String>
         List<Employee> employees = new ArrayList<Employee>();
 
         try{
-            JSONArray jsons = JSONParser.getJSONArrayFromUrl(host + "Employee/" + departmentId);
+            JSONArray jsons = JSONParser.getJSONArrayFromUrl(host + "EmployeeRequisition/" + departmentId);
             for(int i = 0; i < jsons.length(); i ++)
             {
                 JSONObject json = jsons.getJSONObject(i);
                 String id = json.getString("Id");
                 String name = json.getString("Name");
                 String retrieveStatus = json.getString("RetrieveStatus");
-                Employee employee = new Employee(id, name, retrieveStatus);
+                String employeeReqId = json.getString("EmployeeReqId");
+                Employee employee = new Employee(id, name, retrieveStatus, employeeReqId);
                 employees.add(employee);
             }
         } catch (Exception e) {

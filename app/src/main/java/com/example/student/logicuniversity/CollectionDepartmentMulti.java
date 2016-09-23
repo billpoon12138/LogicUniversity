@@ -57,7 +57,7 @@ public class CollectionDepartmentMulti extends AppCompatActivity implements Adap
             @Override
             protected List<Item> doInBackground(String... params)
             {
-                return items = Item.getRequisitionByDepartmentId(deptId);
+                return items = Item.getRequisitionByDepartmentIdCollection(deptId);
             }
             @Override
             protected void onPostExecute(List<Item> result)

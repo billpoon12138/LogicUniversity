@@ -3,6 +3,7 @@ package com.example.student.logicuniversity.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +36,7 @@ public class DistributeAdapter extends ArrayAdapter<Item>
 
         View view = inflater.inflate(R.layout.row_distribute_department, null);
 
-        Item item = items.get(position);
+        final Item item = items.get(position);
 
         if(item != null)
         {
@@ -48,10 +49,43 @@ public class DistributeAdapter extends ArrayAdapter<Item>
             TextView actual = (TextView) view.findViewById(R.id.text5);
             actual.setText(item.get("actual"));
 
-            CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkBox1);
+            final CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkBox1);
             if(item.get("retrieveStatus").equals("retrieved")){
                 checkBox.setChecked(true);
             }
+            checkBox.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    if(checkBox.isChecked()){
+                        new AsyncTask<String, Void, String>()
+                        {
+                            @Override
+                            protected String doInBackground(String... params)
+                            {
+                                System.out.println(item.get("employeeReqDetailId"));
+                                item.changeEmployeeRequisitionDetailRetrieveStatusToRetrieve(item.get("employeeReqDetailId"));
+//                                item.changeDepartmentRequisitionDetailRetrieveStatusToRetrieve(item.get("deptReqDetailId"));
+                                return "";
+                            };
+                        }.execute(item.get("deptReqDetailId"));
+//                        item.changeDepartmentRequisitionDetailRetrieveStatus(item.get("deptReqDetailId"));
+                    }else{
+                        new AsyncTask<String, Void, String>()
+                        {
+                            @Override
+                            protected String doInBackground(String... params)
+                            {
+                                item.changeEmployeeRequisitionDetailRetrieveStatusToUnCheck(item.get("employeeReqDetailId"));
+//                                System.out.println("ListView Select item - Clicked");
+//                                Department.getDepartments();
+//                                item.changeDepartmentRequisitionDetailRetrieveStatusToOpen(item.get("deptReqDetailId"));
+                                return "";
+                            };
+                        }.execute(item.get("deptReqDetailId"));
+                    }
+                }
+            });
         }
         return view;
     }
