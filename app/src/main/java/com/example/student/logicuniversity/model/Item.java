@@ -93,6 +93,17 @@ public class Item extends HashMap<String, String>
         put("retrieveStatus", retrieveStatus);
     }
 
+    public Item(String name, String requested, String row1, String row2, String retrieveStatus,
+                String employeeReqDetailId, int recieve)
+    {
+        put("name", name);
+        put("requested", requested);
+        put("row1",row1);
+        put("row2", row2);
+        put("retrieveStatus", retrieveStatus);
+        put("employeeReqDetailId", employeeReqDetailId);
+    }
+
     public static List<Item> getRequisition()
     {
         List<Item> items = new ArrayList<Item>();
@@ -120,12 +131,43 @@ public class Item extends HashMap<String, String>
         return items;
     }
 
+    // Retrieve process
     public static List<Item> getRequisitionByDepartmentId(String departmentId){
 
         List<Item> items = new ArrayList<Item>();
 
         try{
             JSONArray jsons = JSONParser.getJSONArrayFromUrl(host + "Requisition/" + departmentId);
+            int nnn = jsons.length();
+            for(int i = 0; i < jsons.length(); i ++)
+            {
+                JSONObject json = jsons.getJSONObject(i);
+                String id = json.getString("Id");
+                String name = json.getString("Name");
+                String bin = json.getString("Bin");
+                int requested = json.getInt("Requested");
+                int actual = json.getInt("Actual");
+                String status = json.getString("Status");
+                String deptReqDetailId = json.getString("DeptReqDetailId");
+                String row1 = "Bin#" + bin + " " + name;
+                String row2 = "Requested: " + Integer.toString(requested) + " " + "Actual: " + Integer.toString(actual);
+                Item item = new Item(id, bin, name, Integer.toString(requested), Integer.toString(actual), row1, row2, status, deptReqDetailId);
+                items.add(item);
+            }
+        } catch (Exception e) {
+            Log.e("Exception", StackTrace.trace(e));
+        }
+        return items;
+    }
+
+    // Collection process
+
+    public static List<Item> getRequisitionByDepartmentIdCollection(String departmentId){
+
+        List<Item> items = new ArrayList<Item>();
+
+        try{
+            JSONArray jsons = JSONParser.getJSONArrayFromUrl(host + "RequisitionDept/" + departmentId);
             int nnn = jsons.length();
             for(int i = 0; i < jsons.length(); i ++)
             {
@@ -247,6 +289,32 @@ public class Item extends HashMap<String, String>
         return items;
     }
 
+    // Get requisitions by employeeId with retrieval status and employeeRequisitionDetailId
+    public static List<Item> getRequisitionByEmployeeIdWithERDId(String employeeId)
+    {
+        List<Item> items = new ArrayList<Item>();
+
+        try{
+            JSONArray jsons = JSONParser.getJSONArrayFromUrl(host + "EmployeeRequisitions/" + employeeId);
+            for(int i = 0; i < jsons.length(); i ++)
+            {
+                JSONObject json = jsons.getJSONObject(i);
+                String id = json.getString("Id");
+                String name = json.getString("Name");
+                int requested = json.getInt("Requested");
+                String row1 = name;
+                String row2 = "Requested: " + Integer.toString(requested);
+                String retrieveStatus = json.getString("RetrieveStatus");
+                String employeeReqDetailId = json.getString("EmployeeReqDetailId");
+                Item item = new Item(name, Integer.toString(requested), row1, row2, retrieveStatus, employeeReqDetailId, 0);
+                items.add(item);
+            }
+        } catch (Exception e) {
+            Log.e("Exception", StackTrace.trace(e));
+        }
+        return items;
+    }
+
     public void changeDepartmentRequisitionDetailRetrieveStatusToRetrieve(String deptRDId){
         try{
             JSONParser.getUrl(host + "DepartmentRequisitionsDetail/" + deptRDId);
@@ -259,6 +327,24 @@ public class Item extends HashMap<String, String>
     public void changeDepartmentRequisitionDetailRetrieveStatusToOpen(String deptRDId){
         try{
             JSONParser.getUrl(host + "DepartmentRequisitionsDetailUnCheck/" + deptRDId);
+        } catch (Exception e)
+        {
+            Log.e("Exception", StackTrace.trace(e));
+        }
+    }
+
+    public void changeEmployeeRequisitionDetailRetrieveStatusToRetrieve(String employeeRDId){
+        try{
+            JSONParser.getUrl(host + "EmployeeRequisitionsDetailToRetrieve/" + employeeRDId);
+        } catch (Exception e)
+        {
+            Log.e("Exception", StackTrace.trace(e));
+        }
+    }
+
+    public void changeEmployeeRequisitionDetailRetrieveStatusToUnCheck(String employeeRDId){
+        try{
+            JSONParser.getUrl(host + "EmployeeRequisitionsDetailToUnCheck/" + employeeRDId);
         } catch (Exception e)
         {
             Log.e("Exception", StackTrace.trace(e));
