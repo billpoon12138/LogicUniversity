@@ -143,6 +143,13 @@ public class JSONParser
         return jObj;
     }
 
+    //
+    public static void getUrl(String url)
+    {
+        getStream(url);
+
+    }
+
     public static JSONArray getJSONArrayFromUrl(String url)
     {
         JSONArray jArray = null;

@@ -50,7 +50,7 @@ public class ItemAdapter extends ArrayAdapter<Item>
             TextView bin = (TextView) view.findViewById(R.id.text7);
             bin.setText(item.get("bin"));
 
-            CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkBox1);
+//            CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkBox1);
         }
         return view;
     }

@@ -49,6 +49,9 @@ public class DistributeAdapter extends ArrayAdapter<Item>
             actual.setText(item.get("actual"));
 
             CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkBox1);
+            if(item.get("retrieveStatus").equals("retrieved")){
+                checkBox.setChecked(true);
+            }
         }
         return view;
     }
