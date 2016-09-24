@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,6 +17,11 @@ import android.widget.CheckedTextView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.student.logicuniversity.adapter.EmployeeAdapter;
+import com.example.student.logicuniversity.model.Employee;
+
+import java.util.List;
 
 public class RejectionDepartment extends ListActivity
 {
@@ -44,18 +50,26 @@ public class RejectionDepartment extends ListActivity
 
 
 
-        /*// Cancel button definition and listener assignment
-        Button clickButton = (Button) findViewById(R.id.buttonCancel);
+        // Cancel button definition and listener assignment
+        Button clickButton = (Button) findViewById(R.id.buttonSubmit);
         clickButton.setOnClickListener( new View.OnClickListener()
         {
 
             @Override
             public void onClick(View v)
             {
+                new AsyncTask<String, Void, String>()
+                {
+                    @Override
+                    protected String doInBackground(String... params)
+                    {
+                        Employee.getEmployee(params[0]);
+                        return "";
+                    }
+                }.execute("deptId");
                 finish();
-
             }
-        });*/
+        });
 
 
     }

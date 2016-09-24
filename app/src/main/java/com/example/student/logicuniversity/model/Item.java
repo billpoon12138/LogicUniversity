@@ -56,6 +56,14 @@ public class Item extends HashMap<String, String>
         put("deptReqDetailId", deptReqDetailId);
     }
 
+    // Rejection
+    public Item(String deptReqDetailId, String rejectQty, String rejectReason)
+    {
+        put("rejectReason", rejectReason);
+        put("rejectQty", rejectQty);
+        put("deptReqDetailId", deptReqDetailId);
+    }
+
     public Item(String id, String bin, String name, String requested, String actual)
     {
         put("id", id);
@@ -349,5 +357,24 @@ public class Item extends HashMap<String, String>
         {
             Log.e("Exception", StackTrace.trace(e));
         }
+
+
     }
+
+    // Rejection
+    public static void RejectbyDeptReqDetailId(String deptReqDetailId, String rejectQty, String rejectReason){
+        try{
+
+            JSONObject userJO = new JSONObject();
+            userJO.put("DeptReqDetailId", deptReqDetailId);
+            userJO.put("RejectQty", rejectQty);
+            userJO.put("RejectReason", rejectReason);
+            String json = userJO.toString();
+            JSONObject result = JSONParser.postJSONFromUrl(host + "Rejection", json);
+        } catch (Exception e) {
+            Log.e("Login error", e.toString());
+        }
+
+    }
+
 }
