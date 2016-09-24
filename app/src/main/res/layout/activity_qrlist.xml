@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
@@ -12,7 +13,8 @@ xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.student.logicuniversity.QRListActivity">
     <!-- android:background="#607d8b" -->
 
-<TableLayout
+
+    <TableLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:stretchColumns="1"
@@ -154,7 +156,7 @@ xmlns:tools="http://schemas.android.com/tools"
 
     </TableRow>
 
-</TableLayout>
+    </TableLayout>
 
     <Button
         android:layout_width="wrap_content"
