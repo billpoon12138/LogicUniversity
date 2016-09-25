@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.student.logicuniversity.adapter.Disbursement2Adapter;
@@ -35,7 +36,10 @@ public class DisbursementActivity2 extends AppCompatActivity implements AdapterV
         list.setOnItemClickListener(this);
 
         final String deptId = (String)getIntent().getSerializableExtra("DeptId");
+        String deptName = (String)getIntent().getSerializableExtra("deptName");
 
+        TextView editText = (TextView) findViewById(R.id.editText);
+        editText.setText(deptName);
 
         new AsyncTask<String, Void, List<Item>>()
         {

@@ -79,6 +79,7 @@ public class DisbursementActivity extends AppCompatActivity implements AdapterVi
         String did = department.get("id");
         intent.putExtra("DeptId", did);
         intent.putExtra("department", department);
+        intent.putExtra("deptName", department.get("name"));
         startActivity(intent);
     }
 }
