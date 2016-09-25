@@ -1,10 +1,12 @@
 package com.example.student.logicuniversity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -49,6 +51,21 @@ public class RetrievalActivity extends AppCompatActivity implements AdapterView.
                 list.setAdapter(adapter);
             }
         }.execute();
+
+        // Map button definition and listener assignment
+        Button clickButton = (Button) findViewById(R.id.buttonMap);
+        clickButton.setOnClickListener( new View.OnClickListener()
+        {
+
+            @Override
+            public void onClick(View v)
+            {
+                System.out.println("Map button - Clicked");
+                Intent intent = new Intent(getApplicationContext(), Map.class);
+                startActivity(intent);
+
+            }
+        });
 
     }
 
