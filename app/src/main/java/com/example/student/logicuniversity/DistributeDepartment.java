@@ -40,7 +40,7 @@ public class DistributeDepartment extends AppCompatActivity implements AdapterVi
             @Override
             protected List<Item> doInBackground(String... params)
             {
-                return items = Item.getRequisitionByEmployeeId(employeeId);
+                return items = Item.getRequisitionByEmployeeIdWithERDId(employeeId);
             }
             @Override
             protected void onPostExecute(List<Item> result)
