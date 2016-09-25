@@ -50,7 +50,7 @@ public class DistributeAdapter extends ArrayAdapter<Item>
             actual.setText(item.get("actual"));
 
             final CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkBox1);
-            if(item.get("retrieveStatus").equals("retrieved")){
+            if(item.get("retrieveStatus").equals("checked")){
                 checkBox.setChecked(true);
             }
             checkBox.setOnClickListener(new View.OnClickListener() {
@@ -64,7 +64,7 @@ public class DistributeAdapter extends ArrayAdapter<Item>
                             protected String doInBackground(String... params)
                             {
                                 System.out.println(item.get("employeeReqDetailId"));
-                                item.changeEmployeeRequisitionDetailRetrieveStatusToRetrieve(item.get("employeeReqDetailId"));
+                                item.changeEmployeeRequisitionDetailRetrieveStatusToChecked(item.get("employeeReqDetailId"));
 //                                item.changeDepartmentRequisitionDetailRetrieveStatusToRetrieve(item.get("deptReqDetailId"));
                                 return "";
                             };

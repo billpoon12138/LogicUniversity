@@ -78,6 +78,7 @@ public class Employee extends HashMap<String, String>
                 JSONObject json = jsons.getJSONObject(i);
                 String id = json.getString("Id");
                 String name = json.getString("Name");
+                // EmployeeRequisition
                 String retrieveStatus = json.getString("RetrieveStatus");
                 String employeeReqId = json.getString("EmployeeReqId");
                 Employee employee = new Employee(id, name, retrieveStatus, employeeReqId);

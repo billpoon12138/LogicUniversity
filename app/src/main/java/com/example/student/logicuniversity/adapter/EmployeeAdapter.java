@@ -48,8 +48,6 @@ public class EmployeeAdapter extends ArrayAdapter<Employee>
             }else{
                 id.setText("UnCheck");
             }
-
-
         }
         return view;
     }

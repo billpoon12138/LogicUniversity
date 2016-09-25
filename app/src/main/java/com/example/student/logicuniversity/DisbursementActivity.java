@@ -46,6 +46,30 @@ public class DisbursementActivity extends AppCompatActivity implements AdapterVi
     }
 
     @Override
+    public void onResume()
+    {  // After a pause OR at startup
+        super.onResume();
+        //Refresh your stuff here
+        final ListView list = (ListView) findViewById(R.id.listView);
+        list.setOnItemClickListener(this);
+
+        new AsyncTask<Void, Void, List<Department>>()
+        {
+            @Override
+            protected List<Department> doInBackground(Void... params)
+            {
+                return departments = Department.getDepartments();
+            }
+            @Override
+            protected void onPostExecute(List<Department> result)
+            {
+                DepartmentAdapter adapter = new DepartmentAdapter(DisbursementActivity.this, R.layout.row4, departments);
+                list.setAdapter(adapter);
+            }
+        }.execute();
+    }
+
+    @Override
     public void onItemClick(AdapterView<?> av, View v, int position, long id)
     {
         Department department = (Department) av.getAdapter().getItem(position);

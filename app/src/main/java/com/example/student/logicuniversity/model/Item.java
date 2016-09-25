@@ -341,9 +341,9 @@ public class Item extends HashMap<String, String>
         }
     }
 
-    public void changeEmployeeRequisitionDetailRetrieveStatusToRetrieve(String employeeRDId){
+    public void changeEmployeeRequisitionDetailRetrieveStatusToChecked(String employeeRDId){
         try{
-            JSONParser.getUrl(host + "EmployeeRequisitionsDetailToRetrieve/" + employeeRDId);
+            JSONParser.getUrl(host + "EmployeeRequisitionsDetailToChecked/" + employeeRDId);
         } catch (Exception e)
         {
             Log.e("Exception", StackTrace.trace(e));

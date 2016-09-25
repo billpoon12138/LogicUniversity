@@ -57,6 +57,31 @@ public class EmployeeDepartment extends AppCompatActivity implements AdapterView
     }
 
     @Override
+    public void onResume()
+    {  // After a pause OR at startup
+        super.onResume();
+        //Refresh your stuff here
+        final ListView list = (ListView) findViewById(R.id.listView3);
+        list.setOnItemClickListener(this);
+        String deptId = (String)getIntent().getSerializableExtra("DeptId");
+
+        new AsyncTask<String, Void, List<Employee>>()
+        {
+            @Override
+            protected List<Employee> doInBackground(String... params)
+            {
+                return employees = Employee.getEmployee(params[0]);
+            }
+            @Override
+            protected void onPostExecute(List<Employee> result)
+            {
+                EmployeeAdapter adapter = new EmployeeAdapter(EmployeeDepartment.this, R.layout.row_employee_department, employees);
+                list.setAdapter(adapter);
+            }
+        }.execute(deptId);
+    }
+
+    @Override
     public void onItemClick(AdapterView<?> av, View v, int position, long id)
     {
         //String item = (String) av.getAdapter().getItem(position);
