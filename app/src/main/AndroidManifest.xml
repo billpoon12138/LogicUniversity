@@ -16,14 +16,15 @@
         <activity
             android:name=".LoginActivity"
             android:label="LOGIC UNIVERSITY">
+            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            -->
         </activity>
         <activity android:name=".MenuDepartment">
-
             <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,13 +34,12 @@
         </activity>
         <activity android:name=".MenuStoreActivity">
 
-            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            -->
+
         </activity>
         <activity android:name=".RetrievalActivity" />
         <activity android:name=".RejectionDepartment" />

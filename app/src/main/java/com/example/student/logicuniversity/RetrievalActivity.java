@@ -73,15 +73,15 @@ public class RetrievalActivity extends AppCompatActivity implements AdapterView.
     @Override
     public void onItemClick(AdapterView<?> av, View v, int position, long id)
     {
-        String item = (String) av.getAdapter().getItem(position);
+        /*String item = (String) av.getAdapter().getItem(position);
 
         System.out.println("ListView Select item - Clicked");
 
         Toast.makeText(getApplicationContext(), item + " selected",
-                Toast.LENGTH_LONG).show();
+                Toast.LENGTH_LONG).show();*/
     }
 
-    public void onCheckboxClicked(View view)
+    /*public void onCheckboxClicked(View view)
     {
         // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();
@@ -102,7 +102,7 @@ public class RetrievalActivity extends AppCompatActivity implements AdapterView.
                 break;
 
         }
-    }
+    }*/
 
 
 }
