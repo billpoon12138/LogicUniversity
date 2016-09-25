@@ -24,7 +24,7 @@ public class DisbursementActivity extends AppCompatActivity implements AdapterVi
         setContentView(R.layout.activity_disbursement);
 
         //set title
-        setTitle("BREAKDOWN BY DEPARTMENT");
+        setTitle("Breakdown By Department");
 
         final ListView list = (ListView) findViewById(R.id.listView);
         list.setOnItemClickListener(this);

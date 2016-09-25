@@ -392,7 +392,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 editor.commit();
 
                 //New Activity
-                if(dept.equals("INV")){
+                if(dept.equals("STO")){
                     Intent intent = new Intent(LoginActivity.this, MenuStoreActivity.class);
                     intent.putExtra("DeptId", deptId);
                     startActivity(intent);

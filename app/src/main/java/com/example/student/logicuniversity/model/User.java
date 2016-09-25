@@ -24,7 +24,7 @@ public class User {
     }
 
     // Url for Login
-    final static String host = "http://10.10.2.81/WebSite/LogicUniversity/Service.svc/";
+    final static String host = "http://10.10.2.81/WebSite/LogicUniversityTeam8/Service.svc/";
 
     public User(String userId, String email, String role, String dept, String deptId) {
         UserId = userId;

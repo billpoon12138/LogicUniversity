@@ -16,7 +16,7 @@ public class Item extends HashMap<String, String>
 {
 
     // Url
-    final static String host = "http://10.10.2.81/WebSite/LogicUniversity/Service.svc/";
+    final static String host = "http://10.10.2.81/WebSite/LogicUniversityTeam8/Service.svc/";
 
     // Constructor with parameters
     public Item(String id, String bin, String name, String requested, String actual, String row1, String row2)
