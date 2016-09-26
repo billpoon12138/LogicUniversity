@@ -56,6 +56,7 @@ public class RejectionDepartment extends AppCompatActivity
         TextView na = (TextView)findViewById(R.id.textView3);
         na.setText(name);
 
+
       /*  // -- Display mode of the ListView
         ListView listview = getListView();
 
@@ -72,9 +73,6 @@ public class RejectionDepartment extends AppCompatActivity
 
         setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_checked, option));
         */
-
-
-
 
 
         // Submit button definition and listener assignment
