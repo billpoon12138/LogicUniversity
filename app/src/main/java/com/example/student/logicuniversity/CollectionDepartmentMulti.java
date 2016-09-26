@@ -34,7 +34,7 @@ public class CollectionDepartmentMulti extends AppCompatActivity implements Adap
 
         // Set up Java / XML ListView listener (using Listener interface method)
         final ListView list = (ListView) findViewById(R.id.listView2);
-        list.setOnItemClickListener(this);
+
 
 
  /*       // On-long press touch listener for each ListView row
@@ -93,20 +93,26 @@ public class CollectionDepartmentMulti extends AppCompatActivity implements Adap
                 }.execute(deptId);
             }
         });
+        list.setOnItemClickListener(this);
     }
 
     @Override
     public void onItemClick(AdapterView<?> av, View v, int position, long id)
     {
-        String item = (String) av.getAdapter().getItem(position);
+        Item item = (Item) av.getAdapter().getItem(position);
 
-        System.out.println("ListView Select item - Clicked");
+        Intent intent = new Intent(getApplicationContext(), RejectionDepartment.class);
+        intent.putExtra("deptReqDetailId", item.get("deptReqDetailId"));
+        intent.putExtra("name", item.get("name"));
+        startActivity(intent);
 
-        Toast.makeText(getApplicationContext(), item + " selected",
-                Toast.LENGTH_LONG).show();
+//        System.out.println("ListView Select item - Clicked");
+//
+//        Toast.makeText(getApplicationContext(), item + " selected",
+//                Toast.LENGTH_LONG).show();
     }
 
-    public void onCheckboxClicked(View view)
+/*    public void onCheckboxClicked(View view)
     {
         // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();
@@ -115,7 +121,7 @@ public class CollectionDepartmentMulti extends AppCompatActivity implements Adap
         switch(view.getId())
         {
             // CheckBox1 not used
-            /*case R.id.checkBox1:
+            *//*case R.id.checkBox1:
                 if (checked)
                 {
                     System.out.println("ListView CheckBox item - Clicked");
@@ -125,7 +131,7 @@ public class CollectionDepartmentMulti extends AppCompatActivity implements Adap
                 {
 
                 }
-                break;*/
+                break;*//*
 
             case R.id.checkBox2:
                 if (checked)
@@ -140,7 +146,7 @@ public class CollectionDepartmentMulti extends AppCompatActivity implements Adap
                 }
                 break;
         }
-    }
+    }*/
 
 }
 

@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import com.example.student.logicuniversity.adapter.EmployeeAdapter;
 import com.example.student.logicuniversity.model.Employee;
+import com.example.student.logicuniversity.model.Item;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,6 +55,11 @@ public class RejectionDepartment extends ListActivity
         //--	text filtering
         listview.setTextFilterEnabled(true);
 
+
+        String deptReqDetailId = (String)getIntent().getSerializableExtra("deptReqDetailId");
+        String name = (String)getIntent().getSerializableExtra("name");
+
+
         setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_checked, option));
 
 
@@ -79,7 +85,7 @@ public class RejectionDepartment extends ListActivity
 
 
         // Submit button definition and listener assignment
-        Button clickButton = (Button) findViewById(R.id.buttonSubmit);
+/*        Button clickButton = (Button) findViewById(R.id.buttonSubmit);
         clickButton.setOnClickListener( new View.OnClickListener()
         {
 
@@ -89,21 +95,23 @@ public class RejectionDepartment extends ListActivity
             {
                 // Variable to register the reject quantity
                 rejectQty = (EditText)findViewById(R.id.editText5);
-                Log.v("RejectQty", rejectQty.getText().toString());
+//                Log.v("RejectQty", rejectQty.getText().toString());
+
+                System.out.println("Rejection buttion - Clicked");
 
                 // Asyn task to call method to post rejection form data to database
-                /*new AsyncTask<String, Void, String>()
+                new AsyncTask<String, Void, String>()
                 {
                     @Override
                     protected String doInBackground(String... params)
                     {
-                        Employee.getEmployee(params[0]);
+                        Item.RejectbyDeptReqDetailId(params[0], params[1], params[2]);
                         return "";
                     }
                 }.execute("deptId");
-                finish();*/
+                finish();
             }
-        });
+        });*/
 
 
     }
