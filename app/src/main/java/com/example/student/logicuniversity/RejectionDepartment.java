@@ -52,12 +52,10 @@ public class RejectionDepartment extends AppCompatActivity
         final String deptReqDetailId = (String)getIntent().getSerializableExtra("deptReqDetailId");
         final String name = (String)getIntent().getSerializableExtra("name");
 
-<<<<<<< HEAD
-=======
+
         // Set the item name to  item name edittext view
         TextView na = (TextView)findViewById(R.id.textView3);
         na.setText(name);
->>>>>>> 6969c6c45536f025db788019995280abcf20b9ad
 
 
       /*  // -- Display mode of the ListView
@@ -76,9 +74,6 @@ public class RejectionDepartment extends AppCompatActivity
 
         setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_checked, option));
         */
-
-
-
 
 
         // Submit button definition and listener assignment
