@@ -6,11 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.student.logicuniversity.adapter.CollectionAdapter;
+import com.example.student.logicuniversity.model.Department;
 import com.example.student.logicuniversity.model.Item;
 
 import java.util.List;
@@ -67,6 +69,30 @@ public class CollectionDepartmentMulti extends AppCompatActivity implements Adap
             }
         }.execute(deptId);
 
+        // Submit button to confirm the collection
+        Button clickButton = (Button) findViewById(R.id.buttonSubmit);
+        clickButton.setOnClickListener( new View.OnClickListener()
+        {
+
+            @Override
+            public void onClick(View v)
+            {
+                new AsyncTask<String, Void, String>()
+                {
+                    @Override
+                    protected String doInBackground(String... params)
+                    {
+                        Department.confirmCollection(deptId);
+                        return "";
+                    }
+                    @Override
+                    protected void onPostExecute(String aa)
+                    {
+                        finish();
+                    }
+                }.execute(deptId);
+            }
+        });
     }
 
     @Override
