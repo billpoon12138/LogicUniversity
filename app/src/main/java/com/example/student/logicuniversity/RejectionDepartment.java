@@ -47,6 +47,9 @@ public class RejectionDepartment extends ListActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rejection_department);
 
+        final String deptReqDetailId = (String)getIntent().getSerializableExtra("deptReqDetailId");
+        final String name = (String)getIntent().getSerializableExtra("name");
+
       /*  // -- Display mode of the ListView
         ListView listview = getListView();
 
