@@ -51,6 +51,8 @@ public class RejectionDepartment extends AppCompatActivity
         final String deptReqDetailId = (String)getIntent().getSerializableExtra("deptReqDetailId");
         final String name = (String)getIntent().getSerializableExtra("name");
 
+
+
       /*  // -- Display mode of the ListView
         ListView listview = getListView();
 

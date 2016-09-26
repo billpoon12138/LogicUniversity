@@ -56,6 +56,21 @@ public class Item extends HashMap<String, String>
         put("deptReqDetailId", deptReqDetailId);
     }
 
+    public Item(String id, String bin, String name, String requested,
+                String actual, String row1, String row2, String status, String deptReqDetailId, String deptReqDetailRejectStatus)
+    {
+        put("id", id);
+        put("bin", bin);
+        put("name", name);
+        put("requested", requested);
+        put("actual", actual);
+        put("row1",row1);
+        put("row2", row2);
+        put("status", status);
+        put("deptReqDetailId", deptReqDetailId);
+        put("deptReqDetailRejectStatus", deptReqDetailRejectStatus);
+    }
+
     // Rejection
     public Item(String deptReqDetailId, String rejectQty, String rejectReason)
     {
@@ -187,9 +202,11 @@ public class Item extends HashMap<String, String>
                 int actual = json.getInt("Actual");
                 String status = json.getString("Status");
                 String deptReqDetailId = json.getString("DeptReqDetailId");
+                String deptReqDetailRejectStatus = json.getString("DeptReqDetailRejectStatus");
                 String row1 = "Bin#" + bin + " " + name;
                 String row2 = "Requested: " + Integer.toString(requested) + " " + "Actual: " + Integer.toString(actual);
-                Item item = new Item(id, bin, name, Integer.toString(requested), Integer.toString(actual), row1, row2, status, deptReqDetailId);
+                Item item = new Item(id, bin, name, Integer.toString(requested), Integer.toString(actual),
+                        row1, row2, status, deptReqDetailId, deptReqDetailRejectStatus);
                 items.add(item);
             }
         } catch (Exception e) {
