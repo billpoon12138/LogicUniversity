@@ -6,68 +6,7 @@ xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/images88"
     tools:context="com.example.student.logicuniversity.RejectionDepartment">
 
-
-<LinearLayout
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:layout_alignParentTop="true"
-    android:layout_alignLeft="@android:id/list"
-    android:layout_alignStart="@android:id/list"
-    android:layout_marginTop="260dp"
-    android:id="@+id/linearLayout"
-    android:textColor="#FFFFFF"
-    >
-
-    <!--<ListView
-        android:id="@+id/android:list"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:textColor="#FFFFFF"
-        >
-    </ListView>
--->
-
-</LinearLayout>
-
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:textAppearance="?android:attr/textAppearanceLarge"
-    android:text="REJECTION"
-    android:id="@+id/textView2"
-    android:textSize="21sp"
-    android:background="#3F51B5"
-    android:textColor="#FFFFFF"
-    android:padding="13dp"
-    android:layout_alignParentTop="true"
-    android:layout_alignParentLeft="true"
-    />
-
-<!--<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textAppearance="?android:attr/textAppearanceMedium"
-    android:text="Department:"
-    android:id="@+id/textView3"
-    android:layout_below="@+id/textView2"
-    android:layout_marginTop="30dp"
-    android:layout_marginLeft="15dp"
-    android:textColor="#FFFFFF"
-    />-->
-
-<!--<EditText
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/editText"
-    android:text="English"
-    android:layout_marginLeft="23dp"
-    android:layout_alignBottom="@+id/textView3"
-    android:layout_toEndOf="@+id/textView3"
-    android:textColor="#FFFFFF"
-    />-->
-
-<TextView
+    <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -75,22 +14,19 @@ xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/textView5"
     android:layout_marginTop="17dp"
     android:layout_marginLeft="15dp"
-    android:layout_below="@+id/editText"
     android:textColor="#FFFFFF"
- />
+    />
 
-<EditText
+    <EditText
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/editText3"
     android:text="Pencil"
-    android:layout_below="@+id/editText"
-    android:layout_alignLeft="@+id/editText"
-    android:layout_alignStart="@+id/editText"
     android:textColor="#FFFFFF"
-    />
+    android:layout_alignParentTop="true"
+    android:layout_toEndOf="@+id/buttonSubmit" />
 
-<TextView
+    <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -102,7 +38,7 @@ xmlns:tools="http://schemas.android.com/tools"
     android:textColor="#FFFFFF"
     />
 
-<EditText
+    <EditText
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/editText5"
@@ -131,29 +67,7 @@ xmlns:tools="http://schemas.android.com/tools"
         android:text="Broken part !!!"
         android:layout_below="@+id/editText5"
         android:layout_alignStart="@+id/editText5"
-        android:textColor="#FFFFFF"
-        />
-
-<!--<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textAppearance="?android:attr/textAppearanceLarge"
-    android:text="Reason of rejection:"
-    android:id="@+id/textView8"
-    android:layout_marginTop="45dp"
-    android:layout_below="@+id/textView7"
-    android:layout_marginLeft="15dp"
-
- />-->
-    <!--android:textColor="#FFFFFF" -->
-<!--<Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Back"
-    android:id="@+id/buttonCancel"
-    android:layout_alignParentBottom="true"
-    android:layout_marginLeft="15dp"
-    android:layout_marginBottom="25dp" />-->
+        android:textColor="#FFFFFF" />
 
 <Button
     android:layout_width="wrap_content"
@@ -161,11 +75,87 @@ xmlns:tools="http://schemas.android.com/tools"
     android:text="Submit"
     android:id="@+id/buttonSubmit"
     android:layout_alignParentBottom="true"
-    android:layout_marginBottom="25dp"
-    android:layout_centerHorizontal="true"
- />
-
-
+    android:layout_marginBottom="10dp"
+    android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
 
+
+    <!--<LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@android:id/list"
+        android:layout_alignStart="@android:id/list"
+        android:layout_marginTop="260dp"
+        android:id="@+id/linearLayout"
+        android:textColor="#FFFFFF">
+
+    </LinearLayout>-->
+
+    <!--<ListView
+         android:id="@+id/android:list"
+         android:layout_width="match_parent"
+         android:layout_height="200dp"
+         android:textColor="#FFFFFF"
+         >
+     </ListView>
+ -->
+
+<!-- <TextView
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:textAppearance="?android:attr/textAppearanceLarge"
+android:text="REJECTION"
+android:id="@+id/textView2"
+android:textSize="21sp"
+android:background="#3F51B5"
+android:textColor="#FFFFFF"
+android:padding="13dp"
+android:layout_alignParentTop="true"
+android:layout_alignParentLeft="true"
+    /> -->
+    <!--<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Department:"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"
+        android:textColor="#FFFFFF"
+        />-->
+
+    <!--<EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:text="English"
+        android:layout_marginLeft="23dp"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_toEndOf="@+id/textView3"
+        android:textColor="#FFFFFF"
+        />-->
+
+    <!--<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Reason of rejection:"
+        android:id="@+id/textView8"
+        android:layout_marginTop="45dp"
+        android:layout_below="@+id/textView7"
+        android:layout_marginLeft="15dp"
+
+     />-->
+    <!--android:textColor="#FFFFFF" -->
+    <!--<Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/buttonCancel"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="25dp" />-->

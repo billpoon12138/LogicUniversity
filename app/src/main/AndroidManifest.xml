@@ -43,7 +43,8 @@
             -->
         </activity>
         <activity android:name=".RetrievalActivity" />
-        <activity android:name=".RejectionDepartment" />
+        <activity android:name=".RejectionDepartment"
+            android:label="REJECTION"></activity>
         <activity android:name=".DisbursementActivity" />
         <activity android:name=".StoreMenuActivity" />
         <activity android:name=".DepartmentRequisitionActivity" />

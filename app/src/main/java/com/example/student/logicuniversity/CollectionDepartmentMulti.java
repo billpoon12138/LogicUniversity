@@ -93,6 +93,7 @@ public class CollectionDepartmentMulti extends AppCompatActivity implements Adap
                 }.execute(deptId);
             }
         });
+
         list.setOnItemClickListener(this);
     }
 
@@ -106,11 +107,15 @@ public class CollectionDepartmentMulti extends AppCompatActivity implements Adap
         intent.putExtra("name", item.get("name"));
         startActivity(intent);
 
+    }
+
+
+}
+
 //        System.out.println("ListView Select item - Clicked");
 //
 //        Toast.makeText(getApplicationContext(), item + " selected",
 //                Toast.LENGTH_LONG).show();
-    }
 
 /*    public void onCheckboxClicked(View view)
     {
@@ -147,6 +152,3 @@ public class CollectionDepartmentMulti extends AppCompatActivity implements Adap
                 break;
         }
     }*/
-
-}
-
