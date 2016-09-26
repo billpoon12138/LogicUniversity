@@ -21,10 +21,10 @@ xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/editText3"
-    android:text="Pencil"
+    android:text=""
     android:textColor="#FFFFFF"
-    android:layout_alignParentTop="true"
-    android:layout_toEndOf="@+id/buttonSubmit" />
+        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/textView7" />
 
     <TextView
     android:layout_width="wrap_content"
@@ -42,11 +42,10 @@ xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/editText5"
-    android:text="3"
-    android:layout_below="@+id/editText3"
-    android:layout_alignStart="@+id/editText3"
-    android:textColor="#FFFFFF"
-    />
+    android:text=""
+        android:textColor="#FFFFFF"
+        android:layout_below="@+id/textView5"
+        android:layout_toStartOf="@+id/buttonSubmit" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -64,10 +63,10 @@ xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText6"
-        android:text="Broken part !!!"
-        android:layout_below="@+id/editText5"
-        android:layout_alignStart="@+id/editText5"
-        android:textColor="#FFFFFF" />
+        android:text=""
+        android:textColor="#FFFFFF"
+        android:layout_below="@+id/textView4"
+        android:layout_alignStart="@+id/textView4" />
 
 <Button
     android:layout_width="wrap_content"

@@ -95,6 +95,7 @@
         android:textColor="#FFFFFF"
         />
 
+<<<<<<< HEAD
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -103,6 +104,20 @@
         android:layout_alignParentRight="true"
         android:textColor="#FFFFFF"
         />
+=======
+<!--    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Uncheck"
+        android:id="@+id/text6"
+        android:padding="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:textColor="#FFFFFF"
+        />-->
+>>>>>>> 6969c6c45536f025db788019995280abcf20b9ad
 
 
     <!--<CheckBox
