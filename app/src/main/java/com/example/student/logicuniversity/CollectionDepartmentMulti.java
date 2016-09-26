@@ -98,6 +98,56 @@ public class CollectionDepartmentMulti extends AppCompatActivity implements Adap
     }
 
     @Override
+    public void onResume() {  // After a pause OR at startup
+        super.onResume();
+
+        final ListView list = (ListView) findViewById(R.id.listView2);
+        final String deptId = (String)getIntent().getSerializableExtra("DeptId");
+
+        new AsyncTask<String, Void, List<Item>>()
+        {
+            @Override
+            protected List<Item> doInBackground(String... params)
+            {
+                return items = Item.getRequisitionByDepartmentIdCollection(deptId);
+            }
+            @Override
+            protected void onPostExecute(List<Item> result)
+            {
+                CollectionAdapter adapter = new CollectionAdapter(CollectionDepartmentMulti.this, R.layout.row_collection_department, items);
+                list.setAdapter(adapter);
+            }
+        }.execute(deptId);
+
+        // Submit button to confirm the collection
+        Button clickButton = (Button) findViewById(R.id.buttonSubmit);
+        clickButton.setOnClickListener( new View.OnClickListener()
+        {
+
+            @Override
+            public void onClick(View v)
+            {
+                new AsyncTask<String, Void, String>()
+                {
+                    @Override
+                    protected String doInBackground(String... params)
+                    {
+                        Department.confirmCollection(deptId);
+                        return "";
+                    }
+                    @Override
+                    protected void onPostExecute(String aa)
+                    {
+                        finish();
+                    }
+                }.execute(deptId);
+            }
+        });
+
+        list.setOnItemClickListener(this);
+    }
+
+    @Override
     public void onItemClick(AdapterView<?> av, View v, int position, long id)
     {
         Item item = (Item) av.getAdapter().getItem(position);
