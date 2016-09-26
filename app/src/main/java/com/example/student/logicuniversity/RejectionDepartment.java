@@ -39,6 +39,7 @@ public class RejectionDepartment extends ListActivity
     };
 
     EditText rejectQty;
+    EditText rejectReason;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -56,8 +57,8 @@ public class RejectionDepartment extends ListActivity
         listview.setTextFilterEnabled(true);
 
 
-        String deptReqDetailId = (String)getIntent().getSerializableExtra("deptReqDetailId");
-        String name = (String)getIntent().getSerializableExtra("name");
+        final String deptReqDetailId = (String)getIntent().getSerializableExtra("deptReqDetailId");
+        final String name = (String)getIntent().getSerializableExtra("name");
 
 
         setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_checked, option));
@@ -85,7 +86,7 @@ public class RejectionDepartment extends ListActivity
 
 
         // Submit button definition and listener assignment
-/*        Button clickButton = (Button) findViewById(R.id.buttonSubmit);
+        Button clickButton = (Button) findViewById(R.id.buttonSubmit);
         clickButton.setOnClickListener( new View.OnClickListener()
         {
 
@@ -95,6 +96,7 @@ public class RejectionDepartment extends ListActivity
             {
                 // Variable to register the reject quantity
                 rejectQty = (EditText)findViewById(R.id.editText5);
+                rejectReason = (EditText)findViewById(R.id.editText6);
 //                Log.v("RejectQty", rejectQty.getText().toString());
 
                 System.out.println("Rejection buttion - Clicked");
@@ -108,10 +110,10 @@ public class RejectionDepartment extends ListActivity
                         Item.RejectbyDeptReqDetailId(params[0], params[1], params[2]);
                         return "";
                     }
-                }.execute("deptId");
+                }.execute(deptReqDetailId, rejectQty.getText().toString(), rejectReason.getText().toString());
                 finish();
             }
-        });*/
+        });
 
 
     }
