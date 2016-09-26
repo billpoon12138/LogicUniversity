@@ -53,7 +53,7 @@ public class RejectionDepartment extends AppCompatActivity
         final String name = (String)getIntent().getSerializableExtra("name");
 
         // Set the item name to  item name edittext view
-        EditText na = (EditText)findViewById(R.id.editText3);
+        TextView na = (TextView)findViewById(R.id.textView3);
         na.setText(name);
 
       /*  // -- Display mode of the ListView
