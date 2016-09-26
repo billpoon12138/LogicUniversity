@@ -48,8 +48,14 @@ public class RejectionDepartment extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rejection_department);
 
+        // Get dept requisition detail ID and item name from previous activity
         final String deptReqDetailId = (String)getIntent().getSerializableExtra("deptReqDetailId");
         final String name = (String)getIntent().getSerializableExtra("name");
+
+        // Set the item name to  item name edittext view
+        EditText na = (EditText)findViewById(R.id.editText3);
+        na.setText(name);
+
 
       /*  // -- Display mode of the ListView
         ListView listview = getListView();
