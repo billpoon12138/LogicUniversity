@@ -39,6 +39,7 @@ public class RejectionDepartment extends ListActivity
     };
 
     EditText rejectQty;
+    EditText rejectReason;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -54,6 +55,11 @@ public class RejectionDepartment extends ListActivity
 
         //--	text filtering
         listview.setTextFilterEnabled(true);
+
+
+        final String deptReqDetailId = (String)getIntent().getSerializableExtra("deptReqDetailId");
+        final String name = (String)getIntent().getSerializableExtra("name");
+
 
         setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_checked, option));
 */
@@ -88,7 +94,10 @@ public class RejectionDepartment extends ListActivity
             {
                 // Variable to register the reject quantity
                 rejectQty = (EditText)findViewById(R.id.editText5);
-                Log.v("RejectQty", rejectQty.getText().toString());
+                rejectReason = (EditText)findViewById(R.id.editText6);
+//                Log.v("RejectQty", rejectQty.getText().toString());
+
+                System.out.println("Rejection buttion - Clicked");
 
                 // Asyn task to call method to post rejection form data to database
                 new AsyncTask<String, Void, String>()
@@ -99,7 +108,7 @@ public class RejectionDepartment extends ListActivity
                         Item.RejectbyDeptReqDetailId(params[0], params[1], params[2]);
                         return "";
                     }
-                }.execute("deptId");
+                }.execute(deptReqDetailId, rejectQty.getText().toString(), rejectReason.getText().toString());
                 finish();
             }
         });

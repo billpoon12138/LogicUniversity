@@ -2,6 +2,8 @@ package com.example.student.logicuniversity.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.example.student.logicuniversity.R;
+import com.example.student.logicuniversity.RejectionDepartment;
 import com.example.student.logicuniversity.model.Item;
 
 import java.util.List;
@@ -31,7 +34,7 @@ public class CollectionAdapter extends ArrayAdapter<Item>
         LayoutInflater inflater = (LayoutInflater) getContext()
                 .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.row_collection_department, null);
-        Item item = items.get(position);
+        final Item item = items.get(position);
 
         if(item != null) {
             TextView name = (TextView) view.findViewById(R.id.text1);
@@ -41,7 +44,19 @@ public class CollectionAdapter extends ArrayAdapter<Item>
             TextView actual = (TextView) view.findViewById(R.id.text5);
             actual.setText(item.get("actual"));
 
-            CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkBox2);
+/*            final CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkBox2);
+            checkBox.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    if(checkBox.isChecked()){
+                        System.out.println("ListView CheckBox item - Clicked");
+                        System.out.println(item);
+//                        Intent intent = new Intent(getApplicationContext(), RejectionDepartment.class);
+//                        startActivity(intent);
+                    }
+                }
+            });*/
         }
         return view;
     }
