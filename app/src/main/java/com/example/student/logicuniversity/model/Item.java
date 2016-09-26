@@ -372,7 +372,8 @@ public class Item extends HashMap<String, String>
             userJO.put("RejectReason", rejectReason);
             String json = userJO.toString();
             JSONObject result = JSONParser.postJSONFromUrl(host + "Rejection", json);
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             Log.e("Login error", e.toString());
         }
 

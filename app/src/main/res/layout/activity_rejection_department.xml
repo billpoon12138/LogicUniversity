@@ -19,14 +19,14 @@ xmlns:tools="http://schemas.android.com/tools"
     android:textColor="#FFFFFF"
     >
 
-    <ListView
+    <!--<ListView
         android:id="@+id/android:list"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:textColor="#FFFFFF"
         >
     </ListView>
-
+-->
 
 </LinearLayout>
 
@@ -44,7 +44,7 @@ xmlns:tools="http://schemas.android.com/tools"
     android:layout_alignParentLeft="true"
     />
 
-<TextView
+<!--<TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -54,9 +54,9 @@ xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginTop="30dp"
     android:layout_marginLeft="15dp"
     android:textColor="#FFFFFF"
-    />
+    />-->
 
-<EditText
+<!--<EditText
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/editText"
@@ -65,7 +65,7 @@ xmlns:tools="http://schemas.android.com/tools"
     android:layout_alignBottom="@+id/textView3"
     android:layout_toEndOf="@+id/textView3"
     android:textColor="#FFFFFF"
-    />
+    />-->
 
 <TextView
     android:layout_width="wrap_content"
@@ -112,7 +112,29 @@ xmlns:tools="http://schemas.android.com/tools"
     android:textColor="#FFFFFF"
     />
 
-<TextView
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Reason for rejection:"
+        android:id="@+id/textView4"
+        android:layout_below="@+id/textView7"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:textColor="#FFFFFF"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText6"
+        android:text="Broken part !!!"
+        android:layout_below="@+id/editText5"
+        android:layout_alignStart="@+id/editText5"
+        android:textColor="#FFFFFF"
+        />
+
+<!--<TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textAppearance="?android:attr/textAppearanceLarge"
@@ -122,7 +144,7 @@ xmlns:tools="http://schemas.android.com/tools"
     android:layout_below="@+id/textView7"
     android:layout_marginLeft="15dp"
 
- />
+ />-->
     <!--android:textColor="#FFFFFF" -->
 <!--<Button
     android:layout_width="wrap_content"

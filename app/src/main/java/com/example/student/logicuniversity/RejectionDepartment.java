@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import com.example.student.logicuniversity.adapter.EmployeeAdapter;
 import com.example.student.logicuniversity.model.Employee;
+import com.example.student.logicuniversity.model.Item;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +46,7 @@ public class RejectionDepartment extends ListActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rejection_department);
 
-        // -- Display mode of the ListView
+      /*  // -- Display mode of the ListView
         ListView listview = getListView();
 
         // Enable the following line to allow (SINGLE) or (MULTIPLE) row selection
@@ -55,9 +56,7 @@ public class RejectionDepartment extends ListActivity
         listview.setTextFilterEnabled(true);
 
         setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_checked, option));
-
-
-
+*/
 
 
         /*// Test To find out which row was selected
@@ -74,8 +73,8 @@ public class RejectionDepartment extends ListActivity
                 Log.d("Row", "value: " + key);
 
             }
-        }*/
-
+        }
+*/
 
 
         // Submit button definition and listener assignment
@@ -92,16 +91,16 @@ public class RejectionDepartment extends ListActivity
                 Log.v("RejectQty", rejectQty.getText().toString());
 
                 // Asyn task to call method to post rejection form data to database
-                /*new AsyncTask<String, Void, String>()
+                new AsyncTask<String, Void, String>()
                 {
                     @Override
                     protected String doInBackground(String... params)
                     {
-                        Employee.getEmployee(params[0]);
+                        Item.RejectbyDeptReqDetailId(params[0], params[1], params[2]);
                         return "";
                     }
                 }.execute("deptId");
-                finish();*/
+                finish();
             }
         });
 
