@@ -68,32 +68,5 @@ public class DisbursementActivity2 extends AppCompatActivity implements AdapterV
         Toast.makeText(getApplicationContext(), item + " selected",
                 Toast.LENGTH_LONG).show();
     }
-
-//    public void onCheckboxClicked(View view)
-//    {
-//        // Is the view now checked?
-//        boolean checked = ((CheckBox) view).isChecked();
-//
-//        // Check which checkbox was clicked
-//        switch(view.getId())
-//        {
-//            case R.id.checkBox1:
-//                if (checked)
-//                {
-//                    System.out.println("ListView CheckBox item - Clicked");
-//                    System.out.println(view.getId());
-//
-//
-//
-//                }
-//                else
-//                {
-//                    System.out.println("ListView CheckBox item - UnClick");
-//                }
-//                break;
-//
-//        }
-//    }
-
 }
 

@@ -46,7 +46,6 @@ public class User {
             userJO.put("Password", user.Password);
             String json = userJO.toString();
             JSONObject result = JSONParser.postJSONFromUrl(host + "LoginWithEmail", json);
-//            result = result.substring(1, result.length() - 1);
             User userResult = new User(result.getString("UserId"), result.getString("Email"), result.getString("Role"), result.getString("Dept"), result.getString("DeptId"));
             return userResult;
         } catch (Exception e) {

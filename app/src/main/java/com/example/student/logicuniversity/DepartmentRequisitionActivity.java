@@ -19,8 +19,6 @@ public class DepartmentRequisitionActivity extends AppCompatActivity implements 
     @Override
     public void onItemClick(AdapterView<?> av, View v, int position, long id) {
         Department department = (Department) av.getAdapter().getItem(position);
-//        Toast.makeText(getApplicationContext(), item + " selected",
-//                Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this, CollectionDepartmentMulti.class);
         intent.putExtra("department", department);
         startActivity(intent);

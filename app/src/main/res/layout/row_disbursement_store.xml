@@ -80,14 +80,4 @@
         android:buttonTint="#FFFFFF"
         />
 
-        <!--android:layout_alignTop="@+id/text5"
-        android:layout_toRightOf="@+id/text5"
-        android:layout_toEndOf="@+id/text5"
-        android:layout_alignParentRight="true"-->
-        <!--android:layout_alignParentBottom="true"
-        android:layout_marginLeft="23dp"
-        /> -->
-
-
-
 </RelativeLayout>

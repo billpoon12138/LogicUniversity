@@ -47,8 +47,6 @@ public class MenuDepartment extends ListActivity
         }
         else if (position == 1) // OnClick second row of ListView, transit to next activity (Distribute Employee screen)
         {
-//            SharedPreferences pref =  PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-//            String deptId = pref.getString("DeptId", "1");
             Intent intent = new Intent(this, EmployeeDepartment.class);
             intent.putExtra("DeptId", deptId);
             startActivity(intent);

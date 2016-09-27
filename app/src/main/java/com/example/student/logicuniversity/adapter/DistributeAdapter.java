@@ -65,11 +65,9 @@ public class DistributeAdapter extends ArrayAdapter<Item>
                             {
                                 System.out.println(item.get("employeeReqDetailId"));
                                 item.changeEmployeeRequisitionDetailRetrieveStatusToChecked(item.get("employeeReqDetailId"));
-//                                item.changeDepartmentRequisitionDetailRetrieveStatusToRetrieve(item.get("deptReqDetailId"));
                                 return "";
                             };
                         }.execute(item.get("deptReqDetailId"));
-//                        item.changeDepartmentRequisitionDetailRetrieveStatus(item.get("deptReqDetailId"));
                     }else{
                         new AsyncTask<String, Void, String>()
                         {
@@ -77,9 +75,6 @@ public class DistributeAdapter extends ArrayAdapter<Item>
                             protected String doInBackground(String... params)
                             {
                                 item.changeEmployeeRequisitionDetailRetrieveStatusToUnCheck(item.get("employeeReqDetailId"));
-//                                System.out.println("ListView Select item - Clicked");
-//                                Department.getDepartments();
-//                                item.changeDepartmentRequisitionDetailRetrieveStatusToOpen(item.get("deptReqDetailId"));
                                 return "";
                             };
                         }.execute(item.get("deptReqDetailId"));

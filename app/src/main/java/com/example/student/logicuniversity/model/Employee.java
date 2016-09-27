@@ -48,7 +48,6 @@ public class Employee extends HashMap<String, String>
 
         try{
             JSONArray jsons = JSONParser.getJSONArrayFromUrl(host + "Items");
-            int nnn = jsons.length();
             for(int i = 0; i < jsons.length(); i ++)
             {
                 JSONObject json = jsons.getJSONObject(i);

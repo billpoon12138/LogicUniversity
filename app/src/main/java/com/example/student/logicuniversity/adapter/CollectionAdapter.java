@@ -50,20 +50,6 @@ public class CollectionAdapter extends ArrayAdapter<Item>
             }else{
                 status.setText("");
             }
-
-/*            final CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkBox2);
-            checkBox.setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View v) {
-                    if(checkBox.isChecked()){
-                        System.out.println("ListView CheckBox item - Clicked");
-                        System.out.println(item);
-//                        Intent intent = new Intent(getApplicationContext(), RejectionDepartment.class);
-//                        startActivity(intent);
-                    }
-                }
-            });*/
         }
         return view;
     }

@@ -245,7 +245,7 @@ public class Item extends HashMap<String, String>
         return items;
     }
 
-    /*public static Item getItemById(String ItemId)
+    public static Item getItemById(String ItemId)
     {
         Item item = null;
 
@@ -265,7 +265,7 @@ public class Item extends HashMap<String, String>
             Log.e("Exception", StackTrace.trace(e));
         }
         return item;
-    }*/
+    }
 
     public static Item getItemByCode(String ItemCode)
     {

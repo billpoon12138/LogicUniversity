@@ -74,36 +74,6 @@ public class MenuStoreActivity extends ListActivity
             Intent intent = new Intent(this, DisbursementActivity.class);
             startActivity(intent);
         }
-
-        /*else if (position == 2)
-        {
-            Intent intent = new Intent(this, DisbursementActivity.class);
-            startActivity(intent);
-        }*/
-
-/*        else if (position == 3)
-        {
-            Intent intent = new Intent(this, DisbursementActivity.class);
-            startActivity(intent);
-        }
-        else if (position == 4) // OnClick row of ListView, transit to next activity (Camera screen)
-        {
-            Log.i("event", "Scan button clicked");
-
-            Intent intent = new Intent("la.droid.qr.scan");
-            intent.putExtra("la.droid.qr.complete", true);
-            try
-            {
-                startActivityForResult(intent, CAPTURE_QRCODE);
-
-            } catch (android.content.ActivityNotFoundException anfe)
-            {
-                startActivity(new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("market://details?id=la.droid.qr.priva")));
-            }
-
-        }*/
-
     }
     // Listener actions for the QR code button
     @Override
@@ -142,37 +112,5 @@ public class MenuStoreActivity extends ListActivity
             }
         }
     }
-
- /*   // This is the QR code scan result of the scan activity
-    // Request code (CAPTURE_QRCODE) will be compared to result code;  both must be the same
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data)
-    {
-        if (requestCode == CAPTURE_QRCODE)
-        {
-            if (resultCode == RESULT_OK)
-            {
-                if (data.hasExtra("la.droid.qr.result"))
-                {
-                    // res will hold the scanned QR code result
-                    String res = data.getExtras().getString("la.droid.qr.result");
-
-                    //To show the scanned result via a toast on screen
-                    Toast.makeText(this, res, Toast.LENGTH_LONG).show();
-
-                    // Start new activity to show information about scanned partid QR code
-                    Intent i = new Intent(this, QRListActivity.class);
-                    i.putExtra("key1", res);
-                    startActivityForResult(i, REQUEST_CODE);
-                }
-            } else if (resultCode == RESULT_CANCELED)
-            {
-                // Capture cancelled
-            } else
-            {
-                // Capture failed
-            }
-        }
-    }*/
 
 }

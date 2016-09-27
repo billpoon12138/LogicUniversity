@@ -56,25 +56,6 @@ public class RejectionDepartment extends AppCompatActivity
         TextView na = (TextView)findViewById(R.id.textView3);
         na.setText(name);
 
-
-      /*  // -- Display mode of the ListView
-        ListView listview = getListView();
-
-        // Enable the following line to allow (SINGLE) or (MULTIPLE) row selection
-        listview.setChoiceMode(listview.CHOICE_MODE_SINGLE);
-
-        //--	text filtering
-        listview.setTextFilterEnabled(true);
-
-
-        final String deptReqDetailId = (String)getIntent().getSerializableExtra("deptReqDetailId");
-        final String name = (String)getIntent().getSerializableExtra("name");
-
-
-        setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_checked, option));
-        */
-
-
         // Submit button definition and listener assignment
         Button clickButton = (Button) findViewById(R.id.buttonSubmit);
         clickButton.setOnClickListener( new View.OnClickListener()

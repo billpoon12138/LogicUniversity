@@ -33,9 +33,6 @@ public class EmployeeDepartment extends AppCompatActivity implements AdapterView
         final ListView list = (ListView) findViewById(R.id.listView3);
         list.setOnItemClickListener(this);
 
-        // Get the departmentId
-//        SharedPreferences pref =  PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-//        String deptId = pref.getString("DeptId", "1");
         String deptId = (String)getIntent().getSerializableExtra("DeptId");
 
 
@@ -84,17 +81,12 @@ public class EmployeeDepartment extends AppCompatActivity implements AdapterView
     @Override
     public void onItemClick(AdapterView<?> av, View v, int position, long id)
     {
-        //String item = (String) av.getAdapter().getItem(position);
         Employee employee = (Employee) av.getAdapter().getItem(position);
-
-        System.out.println("ListView Select item - Clicked");
         String eid = employee.get("id");
         Intent intent = new Intent(getApplicationContext(), DistributeDepartment.class);
         intent.putExtra("EmployeeId", eid);
         intent.putExtra("EmployeeReqId", employee.get("EmployeeReqId"));
         startActivity(intent);
-
-        //Toast.makeText(getApplicationContext(), item + " selected", Toast.LENGTH_LONG).show();
     }
 
 

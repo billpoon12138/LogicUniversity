@@ -73,8 +73,6 @@ public class DisbursementActivity extends AppCompatActivity implements AdapterVi
     public void onItemClick(AdapterView<?> av, View v, int position, long id)
     {
         Department department = (Department) av.getAdapter().getItem(position);
-//        Toast.makeText(getApplicationContext(), item + " selected",
-//                Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this, DisbursementActivity2.class);
         String did = department.get("id");
         intent.putExtra("DeptId", did);

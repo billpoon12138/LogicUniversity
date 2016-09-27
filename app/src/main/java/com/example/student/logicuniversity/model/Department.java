@@ -63,7 +63,7 @@ public class Department extends HashMap<String, String> {
 
     public static void confirmCollection(String deptId){
         try{
-            JSONParser.getUrl(host + "DepartmentRequisitionsToClose/" + deptId);
+            JSONParser.getUrl(host + "DepartmentRequisitionsClose/" + deptId);
         } catch (Exception e)
         {
             Log.e("Exception", StackTrace.trace(e));
